@@ -426,7 +426,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayUpdateDurationSec: 0.5
   displayUpdateEase: 6
-  staminaPresenter: {fileID: 730772347}
   staminaFillImage: {fileID: 1060784223}
 --- !u!1 &575266951
 GameObject:
@@ -1059,7 +1058,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerDigit: 2
   timerText: {fileID: 589566150}
-  timerPresenter: {fileID: 0}
 --- !u!1 &1755472124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,7 +1214,6 @@ MonoBehaviour:
   displayUpdateDurationSec: 0.5
   displayUpdateEase: 9
   healthImagePrefab: {fileID: 6804438148422623098, guid: ff15bc6014b39e24f8eee02358c1a015, type: 3}
-  healthPresenter: {fileID: 730772348}
   healthImages: []
 --- !u!1 &2136741775
 GameObject:
