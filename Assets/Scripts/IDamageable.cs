@@ -6,5 +6,4 @@ using UnityEngine.Events;
 public interface IDamageable
 {
     public void TakeDamage(float damage);
-    public void OnDeath(UnityAction action);
 }
