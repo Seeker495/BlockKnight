@@ -1,18 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
+using UnityEngine.Events;
+
 
 public class StaminaPresenter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public UnityAction onInitialize { set; get; }
+    private StaminaModel staminaModel;
+    public ReadOnlyReactiveProperty<float> MaxStamina => staminaModel.MaxStamina;
+    public ReadOnlyReactiveProperty<float> CurrentStamina => staminaModel.CurrentStamina;
+
+    public bool CanAttack(float attackStaminaCost)
     {
-        
+        return staminaModel.CurrentStamina.Value >= attackStaminaCost;
+    }
+    public void Initialize(float maxStamina)
+    {
+        staminaModel = new StaminaModel(maxStamina);
+        onInitialize?.Invoke();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DecreaseStamina(float decreaseStamina)
     {
-        
+        staminaModel.DecreaseStamina(decreaseStamina);
+    }
+
+    public void IncreaseStamina(float increaseStamina)
+    {
+        staminaModel.IncreaseStamina(increaseStamina);
     }
 }

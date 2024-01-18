@@ -384,6 +384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 498977886}
+  - component: {fileID: 498977887}
   m_Layer: 5
   m_Name: Stamina
   m_TagString: Untagged
@@ -411,6 +412,22 @@ RectTransform:
   m_AnchoredPosition: {x: -711, y: 378}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &498977887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498977885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae81ddb7763016b4a91ecef41fa984ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayUpdateDurationSec: 0.5
+  displayUpdateEase: 6
+  staminaPresenter: {fileID: 730772347}
+  staminaFillImage: {fileID: 1060784223}
 --- !u!1 &575266951
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,7 +683,8 @@ GameObject:
   m_Component:
   - component: {fileID: 730772346}
   - component: {fileID: 730772345}
-  - component: {fileID: 730772344}
+  - component: {fileID: 730772347}
+  - component: {fileID: 730772348}
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
@@ -674,18 +692,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &730772344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730772343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b75702f4f4fbb6d43aa441af6e2e77d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &730772345
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -753,6 +759,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &730772347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730772343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6c6e0d553490a438e49c630509b881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &730772348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730772343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75702f4f4fbb6d43aa441af6e2e77d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1060784221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,7 +1155,7 @@ MonoBehaviour:
   displayUpdateDurationSec: 0.5
   displayUpdateEase: 9
   healthImagePrefab: {fileID: 6804438148422623098, guid: ff15bc6014b39e24f8eee02358c1a015, type: 3}
-  healthPresenter: {fileID: 730772344}
+  healthPresenter: {fileID: 730772348}
   healthImages: []
 --- !u!1 &2136741775
 GameObject:

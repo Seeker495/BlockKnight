@@ -15,11 +15,23 @@ public class HealthView : MonoBehaviour
     private HealthPresenter healthPresenter;
     [SerializeField]
     private List<HealthImageFillController> healthImages = new List<HealthImageFillController>();
-
     private float displayHealth;
 
+    /// <summary>
+    /// TODO : 初期化処理をUnityのライフサイクルに依存しないようにしたほうが安定しそう
+    /// </summary>
+    private void Awake()
+    {
+        //初期化処理をPresenterに登録
+        if (healthPresenter == null)
+        {
+            Debug.LogError("HealthPresenterがアタッチされていません");
+            return;
+        }
+        healthPresenter.onInitialize += () => Initialize();
+    }
 
-    private void Start()
+    private void Initialize()
     {
         //HP最大値変更時の処理
         healthPresenter.MaxHealth.Subscribe(value => HealthImageCountUpdate(value)).AddTo(this);
