@@ -12,37 +12,41 @@ public class HealthView : MonoBehaviour
     [SerializeField]
     private HealthImageFillController healthImagePrefab;
     [SerializeField]
-    private HealthPresenter healthPresenter;
-    [SerializeField]
     private List<HealthImageFillController> healthImages = new List<HealthImageFillController>();
     private float displayHealth;
-
-    /// <summary>
-    /// TODO : 初期化処理をUnityのライフサイクルに依存しないようにしたほうが安定しそう
-    /// </summary>
-    private void Awake()
-    {
-        //初期化処理をPresenterに登録
-        if (healthPresenter == null)
-        {
-            Debug.LogError("HealthPresenterがアタッチされていません");
-            return;
-        }
-        healthPresenter.onInitialize += () => Initialize();
-    }
-
-    private void Initialize()
-    {
-        //HP最大値変更時の処理
-        healthPresenter.MaxHealth.Subscribe(value => HealthImageCountUpdate(value)).AddTo(this);
-        //HPの値が変わった時の処理
-        healthPresenter.CurrentHealth.Subscribe(value => UpdateHealth(value)).AddTo(this);
-    }
-
     const float FILL_MAX = 1;
     const float FILL_MIN = 0;
 
-    private void UpdateHealth(float newHealth)
+    /// <summary>
+    /// HP最大値変更時の処理
+    /// </summary>
+    /// <param name="maxHealth"></param>
+    public void HealthImageCountUpdate(float maxHealth)
+    {
+        //HP表示数がHP最大値より足りない場合の処理
+        if (healthImages.Count < (int)maxHealth)
+        {
+            //HP表示数が足りない場合
+            for (int i = healthImages.Count; i < (int)maxHealth; i++)
+            {
+                var healthImage = Instantiate(healthImagePrefab, transform);
+                healthImages.Add(healthImage);
+            }
+        }
+
+        //HP表示数がHP最大値より多い場合の処理
+        if (healthImages.Count > (int)maxHealth)
+        {
+            //HP表示数が多い場合
+            for (int i = healthImages.Count - 1; i >= (int)maxHealth; i--)
+            {
+                healthImages.RemoveAt(i);
+                Destroy(healthImages[i].gameObject);
+            }
+        }
+    }
+
+    public void UpdateHealth(float newHealth)
     {
         // DoTweenを使用してdisplayHealthをnewHealthまで滑らかに変更
         DOTween.To(() => displayHealth, x => displayHealth = x, newHealth, displayUpdateDurationSec)
@@ -77,35 +81,6 @@ public class HealthView : MonoBehaviour
         {
             var partialFill = health - fullHearts;
             healthImages[fullHearts].HealthImageFillUpdate(partialFill);
-        }
-    }
-
-    /// <summary>
-    /// HP最大値変更時の処理
-    /// </summary>
-    /// <param name="maxHealth"></param>
-    private void HealthImageCountUpdate(float maxHealth)
-    {
-        //HP表示数がHP最大値より足りない場合の処理
-        if (healthImages.Count < (int)maxHealth)
-        {
-            //HP表示数が足りない場合
-            for (int i = healthImages.Count; i < (int)maxHealth; i++)
-            {
-                var healthImage = Instantiate(healthImagePrefab, transform);
-                healthImages.Add(healthImage);
-            }
-        }
-
-        //HP表示数がHP最大値より多い場合の処理
-        if (healthImages.Count > (int)maxHealth)
-        {
-            //HP表示数が多い場合
-            for (int i = healthImages.Count - 1; i >= (int)maxHealth; i--)
-            {
-                healthImages.RemoveAt(i);
-                Destroy(healthImages[i].gameObject);
-            }
         }
     }
 }

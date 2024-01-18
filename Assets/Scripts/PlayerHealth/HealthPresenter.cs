@@ -1,16 +1,15 @@
 using UnityEngine;
 using UniRx;
 using UnityEngine.Events;
-using UniRx.Triggers;
 
 public class HealthPresenter : MonoBehaviour, IDamageable
 {
     private HealthModel healthModel;
+    private HealthView healthView;
     public ReadOnlyReactiveProperty<float> CurrentHealth => healthModel.CurrentHealth;
     public ReadOnlyReactiveProperty<float> MaxHealth => healthModel.MaxHealth;
     public ReadOnlyReactiveProperty<bool> IsDead => healthModel.IsDead;
     public UnityAction onDead { set; get; }
-    public UnityAction onInitialize { set; get; }
 
     /// <summary>
     /// 初期化処理
@@ -19,7 +18,8 @@ public class HealthPresenter : MonoBehaviour, IDamageable
     public void Initialize(float maxHealth)
     {
         healthModel = new HealthModel(maxHealth);
-        onInitialize?.Invoke();
+        CurrentHealth.Subscribe(value => healthView.UpdateHealth(value)).AddTo(this);
+        MaxHealth.Subscribe(value => healthView.HealthImageCountUpdate(value)).AddTo(this);
         //死亡時処理
         IsDead.Where(x => x)
               .Subscribe(_ => onDead?.Invoke())
