@@ -152,8 +152,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1575100194}
+  m_Children: []
   m_Father: {fileID: 608612683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -210,8 +209,9 @@ GameObject:
   - component: {fileID: 176175782}
   - component: {fileID: 176175784}
   - component: {fileID: 176175783}
+  - component: {fileID: 176175785}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,16 +224,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176175781}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1676467465}
+  m_Father: {fileID: 1169798563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 660, y: -328}
+  m_AnchoredPosition: {x: 656.7263, y: -318.4}
   m_SizeDelta: {x: 262.1506, y: 107.7213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &176175783
@@ -274,6 +274,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176175781}
   m_CullTransparentMesh: 1
+--- !u!114 &176175785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176175781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad8864eeaf8d2e4c9ccefd7d0c8a501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiFeedbackAnimations:
+    OnButtonEnter: {fileID: 0}
+    OnButtonExit: {fileID: 0}
+    OnButtonDown: {fileID: 0}
+    OnButtonUp: {fileID: 0}
+    OnButtonClick: {fileID: 0}
+  isInteractable: 1
+  isActionAfterAnimation: 0
 --- !u!1 &190578197
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,8 +305,9 @@ GameObject:
   - component: {fileID: 190578198}
   - component: {fileID: 190578200}
   - component: {fileID: 190578199}
+  - component: {fileID: 190578201}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -299,16 +320,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190578197}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1175319369}
+  m_Father: {fileID: 839814403}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 660, y: -328}
+  m_AnchoredPosition: {x: 656.7263, y: -318.4}
   m_SizeDelta: {x: 262.1506, y: 107.7213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &190578199
@@ -349,6 +370,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190578197}
   m_CullTransparentMesh: 1
+--- !u!114 &190578201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190578197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad8864eeaf8d2e4c9ccefd7d0c8a501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiFeedbackAnimations:
+    OnButtonEnter: {fileID: 0}
+    OnButtonExit: {fileID: 0}
+    OnButtonDown: {fileID: 0}
+    OnButtonUp: {fileID: 0}
+    OnButtonClick: {fileID: 0}
+  isInteractable: 1
+  isActionAfterAnimation: 0
 --- !u!1 &201662244
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,6 +791,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342660070}
   m_CullTransparentMesh: 1
+--- !u!1 &369143899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 369143900}
+  m_Layer: 5
+  m_Name: PopupWindows
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &369143900
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369143899}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1169798563}
+  - {fileID: 1586656736}
+  - {fileID: 839814403}
+  - {fileID: 608612683}
+  m_Father: {fileID: 1062346108}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &499593805
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +923,7 @@ MonoBehaviour:
     OnButtonExit: {fileID: 0}
     OnButtonDown: {fileID: 0}
     OnButtonUp: {fileID: 0}
-    OnButtonClick: {fileID: 0}
+    OnButtonClick: {fileID: 11400000, guid: 687408e76da574349ac917610834c320, type: 2}
   isInteractable: 1
   isActionAfterAnimation: 0
 --- !u!1 &592688872
@@ -857,8 +937,9 @@ GameObject:
   - component: {fileID: 592688873}
   - component: {fileID: 592688875}
   - component: {fileID: 592688874}
+  - component: {fileID: 592688876}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -871,16 +952,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592688872}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1999392706}
+  m_Father: {fileID: 1586656736}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 660, y: -328}
+  m_AnchoredPosition: {x: 656.7263, y: -318.4}
   m_SizeDelta: {x: 262.1506, y: 107.7213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &592688874
@@ -921,6 +1002,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592688872}
   m_CullTransparentMesh: 1
+--- !u!114 &592688876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592688872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad8864eeaf8d2e4c9ccefd7d0c8a501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiFeedbackAnimations:
+    OnButtonEnter: {fileID: 0}
+    OnButtonExit: {fileID: 0}
+    OnButtonDown: {fileID: 0}
+    OnButtonUp: {fileID: 0}
+    OnButtonClick: {fileID: 0}
+  isInteractable: 1
+  isActionAfterAnimation: 0
 --- !u!1 &608612682
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,14 +1032,13 @@ GameObject:
   m_Component:
   - component: {fileID: 608612683}
   - component: {fileID: 608612684}
-  - component: {fileID: 608612685}
   m_Layer: 5
   m_Name: CreditWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &608612683
 RectTransform:
   m_ObjectHideFlags: 0
@@ -946,14 +1046,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608612682}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 176148747}
   - {fileID: 266492850}
-  m_Father: {fileID: 1062346108}
+  - {fileID: 176148747}
+  - {fileID: 1575100194}
+  m_Father: {fileID: 369143900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -972,20 +1073,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecdcb92fcfd637d4aa67249d1f082f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionableContents: {fileID: 608612685}
---- !u!114 &608612685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 608612682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf149d28dd7e58c4abdf1ba17e38ca2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  feedbackData: []
+  closeButton: {fileID: 1575100197}
+  openFeedback: {fileID: 11400000, guid: cf0379551753f594bbe5b80f67614a7b, type: 2}
+  closeFeedback: {fileID: 11400000, guid: dafc666f75e036244a4e2b42a55a82ec, type: 2}
+  isOpenOnEnable: 0
 --- !u!1 &839814402
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,14 +1087,13 @@ GameObject:
   m_Component:
   - component: {fileID: 839814403}
   - component: {fileID: 839814404}
-  - component: {fileID: 839814405}
   m_Layer: 5
   m_Name: HowToPlayWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &839814403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1011,14 +1101,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839814402}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1175319369}
   - {fileID: 1966580991}
-  m_Father: {fileID: 1062346108}
+  - {fileID: 1175319369}
+  - {fileID: 190578198}
+  m_Father: {fileID: 369143900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1037,20 +1128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecdcb92fcfd637d4aa67249d1f082f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionableContents: {fileID: 608612685}
---- !u!114 &839814405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839814402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf149d28dd7e58c4abdf1ba17e38ca2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  feedbackData: []
+  closeButton: {fileID: 190578201}
+  openFeedback: {fileID: 11400000, guid: cf0379551753f594bbe5b80f67614a7b, type: 2}
+  closeFeedback: {fileID: 11400000, guid: dafc666f75e036244a4e2b42a55a82ec, type: 2}
+  isOpenOnEnable: 0
 --- !u!1 &901855267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1225,7 @@ MonoBehaviour:
     OnButtonExit: {fileID: 0}
     OnButtonDown: {fileID: 0}
     OnButtonUp: {fileID: 0}
-    OnButtonClick: {fileID: 0}
+    OnButtonClick: {fileID: 11400000, guid: 687408e76da574349ac917610834c320, type: 2}
   isInteractable: 1
   isActionAfterAnimation: 0
 --- !u!1 &1062346104
@@ -1243,10 +1324,7 @@ RectTransform:
   m_Children:
   - {fileID: 342660071}
   - {fileID: 1629533674}
-  - {fileID: 1169798563}
-  - {fileID: 1586656736}
-  - {fileID: 839814403}
-  - {fileID: 608612683}
+  - {fileID: 369143900}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1264,14 +1342,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1169798563}
   - component: {fileID: 1169798564}
-  - component: {fileID: 1169798565}
   m_Layer: 5
-  m_Name: RankingPopupWindow
+  m_Name: RankingWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1169798563
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1279,14 +1356,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169798562}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1676467465}
   - {fileID: 1707662989}
-  m_Father: {fileID: 1062346108}
+  - {fileID: 1676467465}
+  - {fileID: 176175782}
+  m_Father: {fileID: 369143900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1305,20 +1383,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecdcb92fcfd637d4aa67249d1f082f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionableContents: {fileID: 608612685}
---- !u!114 &1169798565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169798562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf149d28dd7e58c4abdf1ba17e38ca2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  feedbackData: []
+  closeButton: {fileID: 176175785}
+  openFeedback: {fileID: 11400000, guid: cf0379551753f594bbe5b80f67614a7b, type: 2}
+  closeFeedback: {fileID: 11400000, guid: dafc666f75e036244a4e2b42a55a82ec, type: 2}
+  isOpenOnEnable: 0
 --- !u!1 &1175319368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,8 +1416,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 190578198}
+  m_Children: []
   m_Father: {fileID: 839814403}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1488,7 +1555,7 @@ MonoBehaviour:
     OnButtonExit: {fileID: 0}
     OnButtonDown: {fileID: 0}
     OnButtonUp: {fileID: 0}
-    OnButtonClick: {fileID: 0}
+    OnButtonClick: {fileID: 11400000, guid: 687408e76da574349ac917610834c320, type: 2}
   isInteractable: 1
   isActionAfterAnimation: 0
 --- !u!1 &1570863775
@@ -1584,7 +1651,7 @@ MonoBehaviour:
     OnButtonExit: {fileID: 0}
     OnButtonDown: {fileID: 0}
     OnButtonUp: {fileID: 0}
-    OnButtonClick: {fileID: 0}
+    OnButtonClick: {fileID: 11400000, guid: 687408e76da574349ac917610834c320, type: 2}
   isInteractable: 1
   isActionAfterAnimation: 0
 --- !u!1 &1575100193
@@ -1598,8 +1665,9 @@ GameObject:
   - component: {fileID: 1575100194}
   - component: {fileID: 1575100196}
   - component: {fileID: 1575100195}
+  - component: {fileID: 1575100197}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1612,16 +1680,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575100193}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 176148747}
+  m_Father: {fileID: 608612683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 660, y: -328}
+  m_AnchoredPosition: {x: 656.7263, y: -318.4}
   m_SizeDelta: {x: 262.1506, y: 107.7213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1575100195
@@ -1662,6 +1730,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575100193}
   m_CullTransparentMesh: 1
+--- !u!114 &1575100197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575100193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad8864eeaf8d2e4c9ccefd7d0c8a501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiFeedbackAnimations:
+    OnButtonEnter: {fileID: 0}
+    OnButtonExit: {fileID: 0}
+    OnButtonDown: {fileID: 0}
+    OnButtonUp: {fileID: 0}
+    OnButtonClick: {fileID: 0}
+  isInteractable: 1
+  isActionAfterAnimation: 0
 --- !u!1 &1586656735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,14 +1760,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1586656736}
   - component: {fileID: 1586656737}
-  - component: {fileID: 1586656738}
   m_Layer: 5
   m_Name: SoundVolumeAdjustWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1586656736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1687,14 +1774,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586656735}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1999392706}
   - {fileID: 282352438}
-  m_Father: {fileID: 1062346108}
+  - {fileID: 1999392706}
+  - {fileID: 592688873}
+  m_Father: {fileID: 369143900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1713,20 +1801,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecdcb92fcfd637d4aa67249d1f082f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionableContents: {fileID: 608612685}
---- !u!114 &1586656738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586656735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf149d28dd7e58c4abdf1ba17e38ca2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  feedbackData: []
+  closeButton: {fileID: 592688876}
+  openFeedback: {fileID: 11400000, guid: cf0379551753f594bbe5b80f67614a7b, type: 2}
+  closeFeedback: {fileID: 11400000, guid: dafc666f75e036244a4e2b42a55a82ec, type: 2}
+  isOpenOnEnable: 0
 --- !u!1 &1629533673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,6 +1814,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1629533674}
+  - component: {fileID: 1629533675}
   m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
@@ -1767,6 +1846,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1629533675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629533673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a115efadc3a02b4393a2e4149305632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playButton: {fileID: 1229672925}
+  playSceneName: 
+  howToPlayButton: {fileID: 901855271}
+  howToPlayPopupWindow: {fileID: 839814404}
+  rankingButton: {fileID: 1632764177}
+  rankingPopupWindow: {fileID: 1169798564}
+  soundVolumeAdjustButton: {fileID: 1570863779}
+  soundVolumeAdjustPopupWindow: {fileID: 1586656737}
+  creditButton: {fileID: 499593809}
+  creditPopupWindow: {fileID: 608612684}
 --- !u!1 &1632764173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,7 +1961,7 @@ MonoBehaviour:
     OnButtonExit: {fileID: 0}
     OnButtonDown: {fileID: 0}
     OnButtonUp: {fileID: 0}
-    OnButtonClick: {fileID: 0}
+    OnButtonClick: {fileID: 11400000, guid: 687408e76da574349ac917610834c320, type: 2}
   isInteractable: 1
   isActionAfterAnimation: 0
 --- !u!1 &1676467464
@@ -1892,8 +1993,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 176175782}
+  m_Children: []
   m_Father: {fileID: 1169798563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2196,8 +2296,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 592688873}
+  m_Children: []
   m_Father: {fileID: 1586656736}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

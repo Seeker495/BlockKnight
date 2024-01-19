@@ -63,11 +63,11 @@ public class AsciiButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
-         if (!isInteractable) return;
+        if (!isInteractable) return;
         //アニメーションがない場合はそのままアクションを呼び出す
-        if (uiFeedbackAnimations.OnButtonDown == null)
+        if (uiFeedbackAnimations.OnButtonUp == null)
         {
-            buttonActions.OnButtonDown?.Invoke();
+            buttonActions.OnButtonUp?.Invoke();
             return;
         }
 
@@ -78,12 +78,11 @@ public class AsciiButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (!isInteractable) return;
         //アニメーションがない場合はそのままアクションを呼び出す
-        if (uiFeedbackAnimations.OnButtonDown == null)
+        if (uiFeedbackAnimations.OnButtonClick == null)
         {
-            buttonActions.OnButtonDown?.Invoke();
+            buttonActions.OnButtonClick?.Invoke();
             return;
         }
-
         PlayFeedbackAndAction(ButtonFeedbackType.ON_BUTTON_CLICK, isActionAfterAnimation);
     }
 
@@ -91,9 +90,9 @@ public class AsciiButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (!isInteractable) return;
         //アニメーションがない場合はそのままアクションを呼び出す
-        if (uiFeedbackAnimations.OnButtonDown == null)
+        if (uiFeedbackAnimations.OnButtonEnter == null)
         {
-            buttonActions.OnButtonDown?.Invoke();
+            buttonActions.OnButtonEnter?.Invoke();
             return;
         }
 
@@ -102,11 +101,11 @@ public class AsciiButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public virtual void OnPointerExit(PointerEventData eventData)
     {
-         if (!isInteractable) return;
+        if (!isInteractable) return;
         //アニメーションがない場合はそのままアクションを呼び出す
-        if (uiFeedbackAnimations.OnButtonDown == null)
+        if (uiFeedbackAnimations.OnButtonExit == null)
         {
-            buttonActions.OnButtonDown?.Invoke();
+            buttonActions.OnButtonExit?.Invoke();
             return;
         }
 
@@ -120,23 +119,23 @@ public class AsciiButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         switch (type)
         {
             case ButtonFeedbackType.ON_BUTTON_ENTER:
-                tween = uiFeedbackAnimations.OnButtonEnter.CreateSequence(transform).sequence;
+                tween = uiFeedbackAnimations.OnButtonEnter.CreateSequence(transform);
                 action = buttonActions.OnButtonEnter;
                 break;
             case ButtonFeedbackType.ON_BUTTON_EXIT:
-                tween = uiFeedbackAnimations.OnButtonExit.CreateSequence(transform).sequence;
+                tween = uiFeedbackAnimations.OnButtonExit.CreateSequence(transform);
                 action = buttonActions.OnButtonExit;
                 break;
             case ButtonFeedbackType.ON_BUTTON_DOWN:
-                tween = uiFeedbackAnimations.OnButtonDown.CreateSequence(transform).sequence;
+                tween = uiFeedbackAnimations.OnButtonDown.CreateSequence(transform);
                 action = buttonActions.OnButtonDown;
                 break;
             case ButtonFeedbackType.ON_BUTTON_UP:
-                tween = uiFeedbackAnimations.OnButtonUp.CreateSequence(transform).sequence;
+                tween = uiFeedbackAnimations.OnButtonUp.CreateSequence(transform);
                 action = buttonActions.OnButtonUp;
                 break;
             case ButtonFeedbackType.ON_BUTTON_CLICK:
-                tween = uiFeedbackAnimations.OnButtonClick.CreateSequence(transform).sequence;
+                tween = uiFeedbackAnimations.OnButtonClick.CreateSequence(transform);
                 action = buttonActions.OnButtonClick;
                 break;
         }
