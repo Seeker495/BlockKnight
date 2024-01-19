@@ -1071,7 +1071,7 @@ GameObject:
   - component: {fileID: 342756547}
   - component: {fileID: 342756546}
   m_Layer: 5
-  m_Name: MasterVolumeSlider
+  m_Name: BGMVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2083,7 +2083,7 @@ GameObject:
   - component: {fileID: 988660765}
   - component: {fileID: 988660764}
   m_Layer: 5
-  m_Name: MasterVolumeSlider
+  m_Name: SEVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2172,7 +2172,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2715,7 +2715,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3470,6 +3470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1586656736}
   - component: {fileID: 1586656737}
+  - component: {fileID: 1586656738}
   m_Layer: 5
   m_Name: SoundVolumeAdjustWindow
   m_TagString: Untagged
@@ -3486,7 +3487,7 @@ RectTransform:
   m_GameObject: {fileID: 1586656735}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 282352438}
@@ -3516,6 +3517,24 @@ MonoBehaviour:
   openFeedback: {fileID: 11400000, guid: cf0379551753f594bbe5b80f67614a7b, type: 2}
   closeFeedback: {fileID: 11400000, guid: dafc666f75e036244a4e2b42a55a82ec, type: 2}
   isOpenOnEnable: 0
+--- !u!114 &1586656738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586656735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0274716155540c741a6ef25d870dab54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolumeSlider: {fileID: 1197119095}
+  masterVolumeText: {fileID: 62916127}
+  bgmVolumeSlider: {fileID: 342756547}
+  bgmVolumeText: {fileID: 1187608864}
+  seVolumeSlider: {fileID: 988660765}
+  seVolumeText: {fileID: 133080602}
 --- !u!1 &1629533673
 GameObject:
   m_ObjectHideFlags: 0

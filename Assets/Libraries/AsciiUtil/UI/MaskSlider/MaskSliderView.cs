@@ -17,6 +17,7 @@ public class MaskSliderView : MonoBehaviour
     private void Start()
     {
         slider.fillRect = null;
+        SetValue(slider.value);
         slider.onValueChanged.AddListener(SetValue);
     }
 

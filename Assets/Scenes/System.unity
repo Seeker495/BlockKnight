@@ -156,6 +156,10 @@ MonoBehaviour:
   bgmInfo: []
   masterVolumeMultiply:
     value: 1
+  bgmVolumeMultiply:
+    value: 1
+  seVolumeMultiply:
+    value: 1
   currentPlayBGMSource: {fileID: 0}
   previousPlayBGMSource: {fileID: 0}
 --- !u!4 &64287971

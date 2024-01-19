@@ -10,7 +10,6 @@ public class SEInfo
 {
     public string name;
     public AudioClip clip;
-    public float volume;
     public List<AudioSource> audioSources;
     public AudioSource FindOrAddAudioSource(Transform transform)
     {
@@ -35,7 +34,6 @@ public class BGMInfo
 {
     public string name;
     public AudioClip clip;
-    public float volume;
     public List<AudioSource> audioSources = new List<AudioSource>();
 
     public AudioSource FindOrAddAudioSource(Transform transform)
@@ -66,6 +64,13 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     public IReadOnlyList<BGMInfo> BGMInfo => bgmInfo;
     [SerializeField]
     private FloatReactiveProperty masterVolumeMultiply = new FloatReactiveProperty();
+    public ReadOnlyReactiveProperty<float> MasterVolumeMultiply => masterVolumeMultiply.ToReadOnlyReactiveProperty();
+    [SerializeField]
+    private FloatReactiveProperty bgmVolumeMultiply = new FloatReactiveProperty();
+    public ReadOnlyReactiveProperty<float> BGMVolumeMultiply => bgmVolumeMultiply.ToReadOnlyReactiveProperty();
+    [SerializeField]
+    private FloatReactiveProperty seVolumeMultiply = new FloatReactiveProperty();
+    public ReadOnlyReactiveProperty<float> SEVolumeMultiply => seVolumeMultiply.ToReadOnlyReactiveProperty();
 
     [SerializeField]
     private AudioSource currentPlayBGMSource;
@@ -75,10 +80,13 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     private void Start()
     {
         //マスターボリュームの変更を監視して、それぞれの音量を変更する
-        masterVolumeMultiply.Subscribe(x =>
-        {
-            ChangeVolume(x);
-        });
+        masterVolumeMultiply.Subscribe(_ => ChangeVolume());
+
+        //BGMのボリューム変更を監視して、それぞれの音量を変更する
+        bgmVolumeMultiply.Subscribe(_ => ChangeVolume());
+
+        //SEのボリューム変更を監視して、それぞれの音量を変更する
+        seVolumeMultiply.Subscribe(_ => ChangeVolume());
     }
 
     /// <summary>
@@ -90,7 +98,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     /// <param name="volume"></param>
     /// <param name="isFeedIn"></param>
     /// <param name="feedDuration"></param> <summary>
-    public SoundManager PlayBGM(string clipName, float volume = 1, int priority = 0)
+    public SoundManager PlayBGM(string clipName, int priority = 0)
     {
         //BGMクリップを検索し、なければエラーを出して終了
         var info = FindBGMClip(clipName);
@@ -101,7 +109,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         //AudioSourceの設定
         bgmSource.clip = info.clip;
         bgmSource.priority = priority;
-        bgmSource.volume = masterVolumeMultiply.Value * info.volume * volume;
+        bgmSource.volume = 1 * masterVolumeMultiply.Value * bgmVolumeMultiply.Value;
         currentPlayBGMSource = bgmSource;
         currentPlayBGMSource.Play();
         return this;
@@ -175,16 +183,15 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     /// <param name="pitchMin"></param>
     /// <param name="pitchMax"></param>
     /// <param name="volume"></param> <summary>
-    public void PlaySE(string clipName, float pitchMin = 1, float pitchMax = 1, float volume = 1)
+    public void PlaySE(string clipName)
     {
         var info = FindSEClip(clipName);
         if (info == null) return;
 
-        var currentPlaySource = info.audioSources.FirstOrDefault(x => !x.isPlaying);
+        var currentPlaySource = info.FindOrAddAudioSource(transform);
         if (currentPlaySource == null) return;
 
-        currentPlaySource.pitch = Random.Range(pitchMin, pitchMax);
-        currentPlaySource.volume = masterVolumeMultiply.Value * info.volume * volume;
+        currentPlaySource.volume = 1 * masterVolumeMultiply.Value * seVolumeMultiply.Value;
         currentPlaySource.PlayOneShot(info.clip);
     }
 
@@ -193,19 +200,29 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         masterVolumeMultiply.Value = value;
     }
 
-    private void ChangeVolume(float masterVolume)
+    public void SetBGMVolumeMultiply(float value)
+    {
+        bgmVolumeMultiply.Value = value;
+    }
+
+    public void SetSEVolumeMultiply(float value)
+    {
+        seVolumeMultiply.Value = value;
+    }
+
+    private void ChangeVolume()
     {
         foreach (var info in seInfo)
         {
             foreach (var source in info.audioSources)
             {
                 if (source == null) continue;
-                source.volume = masterVolume;
+                source.volume = 1 * masterVolumeMultiply.Value * seVolumeMultiply.Value;
             }
         }
 
         if (currentPlayBGMSource == null) return;
-        currentPlayBGMSource.volume = masterVolume;
+        currentPlayBGMSource.volume = 1 * masterVolumeMultiply.Value * bgmVolumeMultiply.Value;
     }
 
     private System.IDisposable playingDisposable;
