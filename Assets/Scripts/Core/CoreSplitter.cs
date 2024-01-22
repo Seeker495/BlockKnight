@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class CoreSplitter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private GameObject cloneCorePrefab;
+    [SerializeField]
+    private float cloneInitialSpeed;
 
-    // Update is called once per frame
-    void Update()
+    Rigidbody2D rigidBody;
+
+    public void Split()
     {
-        
+        var cloneCore = Instantiate(cloneCorePrefab, transform.position, Quaternion.identity);
+        rigidBody = cloneCore.GetComponent<Rigidbody2D>();
+        Vector2 randomVector = Random.insideUnitCircle;
+        rigidBody.velocity = randomVector * cloneInitialSpeed;
     }
 }
