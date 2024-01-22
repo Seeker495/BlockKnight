@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4229555861648767835}
   - component: {fileID: 4104186663984220939}
   - component: {fileID: 9014787388966957877}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CloneCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
