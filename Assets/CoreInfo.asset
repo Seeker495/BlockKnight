@@ -17,7 +17,7 @@ MonoBehaviour:
   displayMinSpeed: 0
   displayMaxSpeed: 180
   initialSpeed: 15
-  onHitBlockSpeedUpValue: 0.5
+  onHitBlockSpeedUpValue: 2
   speedDecreaseInterval: 0.1
   speedDecreaseValue: 0.15
   cloneSpeed: 25

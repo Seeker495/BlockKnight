@@ -12,16 +12,20 @@ public class CoreSpeedView : MonoBehaviour
     [SerializeField]
     private Image coreSpeedFillImage;
     [SerializeField]
+    private Image heartImage;
+    [SerializeField]
     private SpriteAnimationPlayer spriteAnimationPlayer;
     [SerializeField]
     private TextMeshProUGUI coreSpeedText;
 
     private float displayCoreSpeed;
     private CoreInfo coreInfo;
+    private Material heartImageMaterial;
 
     private void Start()
     {
         coreInfo = InfomationProvider.Instance.CoreInfo;
+        heartImageMaterial = heartImage.material;
         spriteAnimationPlayer.Play();
     }
 
@@ -38,6 +42,8 @@ public class CoreSpeedView : MonoBehaviour
     {
         coreSpeedFillImage.fillAmount = value / coreInfo.MaxSpeed;
         coreSpeedText.text = ConvertSpeedForDisplay(value).ToString("F0");
+        float outlineDistortionAmount = Mathf.Clamp(coreSpeedFillImage.fillAmount, 0, 0.7f);
+        heartImageMaterial.SetFloat("_OutlineDistortAmount", outlineDistortionAmount);
     }
 
     private float ConvertSpeedForDisplay(float actualSpeed)
