@@ -27,4 +27,14 @@ public class CoreInfo : ScriptableObject
     private float speedDecreaseValue;
     public float SpeedDecreaseValue => speedDecreaseValue;
 
+
+    [Space(10), Header("クローン")]
+    [SerializeField, Header("クローンの速度")]
+    private float cloneSpeed;
+    public float CloneSpeed => cloneSpeed;
+
+    [SerializeField, Header("クローンが消えるまでの時間(秒)")]
+    private float cloneLifeTimeSec;
+    public float ClonellifeTimeSec => cloneLifeTimeSec;
+
 }

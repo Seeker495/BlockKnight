@@ -2758,8 +2758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee1e682ec584e548a19582e2ab794b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloneCorePrefab: {fileID: 8122378726131625672, guid: 13cbcf663bfac974fbd99bc070a0d08a, type: 3}
-  cloneInitialSpeed: 10
+  cloneCorePrefab: {fileID: 4670902813095278868, guid: 13cbcf663bfac974fbd99bc070a0d08a, type: 3}
 --- !u!1 &1037487241
 GameObject:
   m_ObjectHideFlags: 0

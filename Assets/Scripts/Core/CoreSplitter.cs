@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using AsciiUtil;
+using AsciiUtil.ScriptableSystem;
 using UnityEngine;
 
 public class CoreSplitter : MonoBehaviour
 {
     [SerializeField]
-    private GameObject cloneCorePrefab;
-    [SerializeField]
-    private float cloneInitialSpeed;
-
-    Rigidbody2D rigidBody;
+    private PoolableObject cloneCorePrefab;
+    private ObjectPoolingSystem objectPoolingSystem;
+    private void Start()
+    {
+        objectPoolingSystem = ScriptableSystemProvider.Instance.GetSystem<ObjectPoolingSystem>();
+    }
 
     public void Split()
     {
-        var cloneCore = Instantiate(cloneCorePrefab, transform.position, Quaternion.identity);
-        rigidBody = cloneCore.GetComponent<Rigidbody2D>();
-        Vector2 randomVector = Random.insideUnitCircle;
-        rigidBody.velocity = randomVector * cloneInitialSpeed;
+        var cloneCore = objectPoolingSystem.Rent(cloneCorePrefab);
+        cloneCore.transform.position = transform.position;
+        cloneCore.GetComponent<CoreClone>().Initialize().Forget();
     }
 }

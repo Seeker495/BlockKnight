@@ -193,8 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee1e682ec584e548a19582e2ab794b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloneCorePrefab: {fileID: 8122378726131625672}
-  cloneInitialSpeed: 10
+  cloneCorePrefab: {fileID: 4670902813095278868}
 --- !u!114 &9014787388966957877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTimeSec: 5
+  coreInfo: {fileID: 11400000, guid: 21f65f1cdb72c4e4f9eda67af5b9d69d, type: 2}
 --- !u!114 &4670902813095278868
 MonoBehaviour:
   m_ObjectHideFlags: 0
