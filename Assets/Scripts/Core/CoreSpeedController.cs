@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CoreSpeedController : MonoBehaviour
 {
-    private CoreInfo coreInfo;
     private FloatReactiveProperty currentSpeed;
+    public ReadOnlyReactiveProperty<float> CurrentSpeed => currentSpeed.ToReadOnlyReactiveProperty();
+    private CoreInfo coreInfo;
     private Rigidbody2D rigidBody;
 
     private void Start()
