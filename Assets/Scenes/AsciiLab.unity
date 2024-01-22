@@ -1200,7 +1200,7 @@ GameObject:
   - component: {fileID: 447402159}
   - component: {fileID: 447402160}
   - component: {fileID: 447402161}
-  - component: {fileID: 447402163}
+  - component: {fileID: 447402162}
   m_Layer: 0
   m_Name: Down
   m_TagString: Untagged
@@ -1320,7 +1320,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &447402163
+--- !u!114 &447402162
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1329,9 +1329,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 447402158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f84e960143d5fc949809153f1c34351e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c1581f72748cd941803b8e1f6953bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 1
+  isIndestructible: 1
+  cameraShakeTweenAction: {fileID: 11400000, guid: ff4e6613ffc57704e8f8103a66676762, type: 2}
 --- !u!1 &498977885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,9 +1527,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 520541425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f84e960143d5fc949809153f1c34351e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c1581f72748cd941803b8e1f6953bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 1
+  isIndestructible: 1
+  cameraShakeTweenAction: {fileID: 11400000, guid: ff4e6613ffc57704e8f8103a66676762, type: 2}
 --- !u!1 &578021479
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,9 +2097,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 748792059}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f84e960143d5fc949809153f1c34351e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c1581f72748cd941803b8e1f6953bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 1
+  isIndestructible: 1
+  cameraShakeTweenAction: {fileID: 11400000, guid: ff4e6613ffc57704e8f8103a66676762, type: 2}
 --- !u!1 &783251130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,7 +2114,7 @@ GameObject:
   - component: {fileID: 783251132}
   - component: {fileID: 783251131}
   - component: {fileID: 783251133}
-  - component: {fileID: 783251135}
+  - component: {fileID: 783251134}
   m_Layer: 0
   m_Name: Up
   m_TagString: Untagged
@@ -2225,7 +2234,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &783251135
+--- !u!114 &783251134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2234,9 +2243,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 783251130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f84e960143d5fc949809153f1c34351e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c1581f72748cd941803b8e1f6953bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 1
+  isIndestructible: 1
+  cameraShakeTweenAction: {fileID: 11400000, guid: ff4e6613ffc57704e8f8103a66676762, type: 2}
 --- !u!1 &821367446
 GameObject:
   m_ObjectHideFlags: 0
