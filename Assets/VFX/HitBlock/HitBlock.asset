@@ -9,6 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca1f7c79cabd1cf46a95049af7d45fb9, type: 3}
-  m_Name: Data
+  m_Script: {fileID: 11500000, guid: 1e7a22d190ee6bc4e839623b959ad3c6, type: 3}
+  m_Name: HitBlock
   m_EditorClassIdentifier: 
+  particleKey: HitBlock
+  particleObj: {fileID: 2128261669443919107, guid: 14d0e0fdedf34ca4dbc985c7989c9742, type: 3}
+  initInstanceNum: 5

@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedUpBlock : MonoBehaviour, IBlockable
+public class SpeedUpBlock : Block
 {
     [SerializeField]
     private float coreSpeedUpValue;
-    public void HitAction(CoreSpeedController coreSpeedController)
+    public override void HitAction(CoreSpeedController coreSpeedController)
     {
+        base.HitAction(coreSpeedController);
         coreSpeedController.IncreaseSpeed(coreSpeedUpValue);
     }
 }
