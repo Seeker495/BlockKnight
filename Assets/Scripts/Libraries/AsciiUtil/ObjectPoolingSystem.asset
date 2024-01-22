@@ -9,14 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca1f7c79cabd1cf46a95049af7d45fb9, type: 3}
-  m_Name: CoreInfo
+  m_Script: {fileID: 11500000, guid: 207cea29479c1bb4186349d7c4f4dcf0, type: 3}
+  m_Name: ObjectPoolingSystem
   m_EditorClassIdentifier: 
-  maxSpeed: 35
-  minSpeed: 2
-  initialSpeed: 15
-  onHitBlockSpeedUpValue: 0.5
-  speedDecreaseInterval: 0.1
-  speedDecreaseValue: 0.15
-  cloneSpeed: 25
-  cloneLifeTimeSec: 0.3
+  rootName: PoolRoot
