@@ -16,5 +16,5 @@ MonoBehaviour:
   minSpeed: 2
   initialSpeed: 15
   onHitBlockSpeedUpValue: 0.5
-  speedDecreaseInterval: 1
-  speedDecreaseValue: 1.5
+  speedDecreaseInterval: 0.1
+  speedDecreaseValue: 0.15
