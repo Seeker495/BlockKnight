@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CoreAttacker : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private float damage;
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        IDamageable damageable = null;
+        if (!other.gameObject.TryGetComponent(out damageable)) return;
+        damageable.TakeDamage(damage);
     }
 }
