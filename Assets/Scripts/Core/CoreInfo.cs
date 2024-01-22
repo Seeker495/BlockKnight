@@ -6,10 +6,16 @@ public class CoreInfo : ScriptableObject
     [SerializeField, Header("最高速度")]
     private float maxSpeed;
     public float MaxSpeed => maxSpeed;
-
     [SerializeField, Header("最低速度")]
     private float minSpeed;
     public float MinSpeed => minSpeed;
+
+    [SerializeField,Header("表示用の最低速度")]
+    private float displayMinSpeed;
+    public float DisplayMinSpeed => displayMinSpeed;
+    [SerializeField, Header("表示用の最高速度")]
+    private float displayMaxSpeed;
+    public float DisplayMaxSpeed => displayMaxSpeed;
 
     [SerializeField, Header("初期速度")]
     private float initialSpeed;

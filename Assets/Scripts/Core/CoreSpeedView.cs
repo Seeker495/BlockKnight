@@ -27,7 +27,6 @@ public class CoreSpeedView : MonoBehaviour
 
     public void UpdateCoreSpeed(float newCoreSpeed)
     {
-        // DoTweenを使用してdisplayStaminaをnewStaminaまで滑らかに変更
         DOTween.To(() => displayCoreSpeed, x => displayCoreSpeed = x, newCoreSpeed, displayUpdateDurationSec)
         .SetEase(displayUpdateEase)
         .OnUpdate(() =>
@@ -38,7 +37,13 @@ public class CoreSpeedView : MonoBehaviour
     private void CoreSpeedViewUpdate(float value)
     {
         coreSpeedFillImage.fillAmount = value / coreInfo.MaxSpeed;
-        coreSpeedText.text = value.ToString("F0");
+        coreSpeedText.text = ConvertSpeedForDisplay(value).ToString("F0");
+    }
+
+    private float ConvertSpeedForDisplay(float actualSpeed)
+    {
+        float normalized = (actualSpeed - coreInfo.MinSpeed) / (coreInfo.MaxSpeed - coreInfo.MinSpeed);
+        return normalized * (coreInfo.DisplayMaxSpeed - coreInfo.DisplayMinSpeed) + coreInfo.DisplayMinSpeed;
     }
 
 }

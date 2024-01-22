@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 35
   minSpeed: 2
+  displayMinSpeed: 0
+  displayMaxSpeed: 180
   initialSpeed: 15
   onHitBlockSpeedUpValue: 0.5
   speedDecreaseInterval: 0.1
