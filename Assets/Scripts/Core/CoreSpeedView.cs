@@ -29,6 +29,10 @@ public class CoreSpeedView : MonoBehaviour
         spriteAnimationPlayer.Play();
     }
 
+    /// <summary>
+    /// コアの速度を更新
+    /// </summary>
+    /// <param name="newCoreSpeed"></param>
     public void UpdateCoreSpeed(float newCoreSpeed)
     {
         DOTween.To(() => displayCoreSpeed, x => displayCoreSpeed = x, newCoreSpeed, displayUpdateDurationSec)
@@ -40,12 +44,20 @@ public class CoreSpeedView : MonoBehaviour
     }
     private void CoreSpeedViewUpdate(float value)
     {
+        //スピードゲージの表示を変更
         coreSpeedFillImage.fillAmount = value / coreInfo.MaxSpeed;
+        //テキストの表示を変更
         coreSpeedText.text = ConvertSpeedForDisplay(value).ToString("F0");
+        //心臓のアウトラインのシェーダーの値を変更
         float outlineDistortionAmount = Mathf.Clamp(coreSpeedFillImage.fillAmount, 0, 0.7f);
         heartImageMaterial.SetFloat("_OutlineDistortAmount", outlineDistortionAmount);
     }
 
+    /// <summary>
+    /// 実際のスピードを表示用のスピードに変換する
+    /// </summary>
+    /// <param name="actualSpeed"></param>
+    /// <returns></returns>
     private float ConvertSpeedForDisplay(float actualSpeed)
     {
         float normalized = (actualSpeed - coreInfo.MinSpeed) / (coreInfo.MaxSpeed - coreInfo.MinSpeed);

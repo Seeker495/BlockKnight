@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
@@ -16,6 +14,7 @@ public class CoreSpeedPresenter : MonoBehaviour
 
     private async void Start()
     {
+        //CoreSpeedControllerの初期化タイミングをStartにしてるから1フレーム待機してから初期化
         await UniTask.DelayFrame(1);
         Initialize();
     }

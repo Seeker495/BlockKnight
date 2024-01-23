@@ -2,7 +2,6 @@ using AsciiUtil.ScriptableSystem;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using AsciiUtil;
-using Unity.VisualScripting;
 
 public class CoreClone : MonoBehaviour
 {
