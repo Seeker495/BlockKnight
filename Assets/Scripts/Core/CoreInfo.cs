@@ -10,12 +10,19 @@ public class CoreInfo : ScriptableObject
     private float minSpeed;
     public float MinSpeed => minSpeed;
 
-    [SerializeField,Header("表示用の最低速度")]
+    [SerializeField, Header("表示用の最低速度")]
     private float displayMinSpeed;
     public float DisplayMinSpeed => displayMinSpeed;
     [SerializeField, Header("表示用の最高速度")]
     private float displayMaxSpeed;
     public float DisplayMaxSpeed => displayMaxSpeed;
+
+    [SerializeField, Header("低速時の色")]
+    private Color lowSpeedColor;
+    public Color LowSpeedColor => lowSpeedColor;
+    [SerializeField, Header("高速時の色")]
+    private Color highSpeedColor;
+    public Color HighSpeedColor => highSpeedColor;
 
     [SerializeField, Header("初期速度")]
     private float initialSpeed;

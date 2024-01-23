@@ -3276,6 +3276,7 @@ GameObject:
   - component: {fileID: 1020254553}
   - component: {fileID: 1020254554}
   - component: {fileID: 1020254555}
+  - component: {fileID: 1020254556}
   m_Layer: 6
   m_Name: Core
   m_TagString: Untagged
@@ -3479,6 +3480,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloneCorePrefab: {fileID: 4670902813095278868, guid: 13cbcf663bfac974fbd99bc070a0d08a, type: 3}
+--- !u!114 &1020254556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020254544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e4b2a25fd899544a821bc90c9f4f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1037487241
 GameObject:
   m_ObjectHideFlags: 0
