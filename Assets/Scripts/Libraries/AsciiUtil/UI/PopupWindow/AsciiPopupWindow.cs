@@ -30,6 +30,7 @@ namespace AsciiUtil.UI
 
         private void Start()
         {
+            if (closeButton == null) return;
             closeButton.ButtonActions.OnButtonClick += () =>
             {
                 ClosePopupWindow();
