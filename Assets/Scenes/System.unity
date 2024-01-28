@@ -152,8 +152,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d738f9980f92aca4e92b29c42c1463f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seInfo: []
-  bgmInfo: []
+  seInfo:
+  - name: Push_Button
+    clip: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+    audioSources: []
+  - name: Player_Attack
+    clip: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+    audioSources: []
+  - name: Player_Jump
+    clip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+    audioSources: []
+  - name: Player_damage
+    clip: {fileID: 8300000, guid: caa5e06cfdf57544e9b59f061674f9f4, type: 3}
+    audioSources: []
+  - name: Player_Footstep
+    clip: {fileID: 8300000, guid: d8b3e470fba0e504bbd3c1f4a4c17131, type: 3}
+    audioSources: []
+  - name: Core_Reflection
+    clip: {fileID: 8300000, guid: 0b5bdbd7dd367364f8f55b1819ec5f91, type: 3}
+    audioSources: []
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 50660d39bfde3f743988e0f8b95bef06, type: 3}
+    audioSources: []
+  - name: GameClear
+    clip: {fileID: 8300000, guid: fef0142e26119d749b685eaf1b6c2a91, type: 3}
+    audioSources: []
+  bgmInfo:
+  - name: Title
+    clip: {fileID: 8300000, guid: 89f935015cc98724a862a586326fdf21, type: 3}
+    audioSources: []
+  - name: In play
+    clip: {fileID: 8300000, guid: 033766cc31c97904bae4404b8a079544, type: 3}
+    audioSources: []
+  - name: Boss
+    clip: {fileID: 8300000, guid: f6561765e34f9d642b81c39591aec4f7, type: 3}
+    audioSources: []
   masterVolumeMultiply:
     value: 1
   bgmVolumeMultiply:
