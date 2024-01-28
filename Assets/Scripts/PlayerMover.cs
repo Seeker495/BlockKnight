@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UniRx;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,10 +12,13 @@ public class PlayerMover : MonoBehaviour
     public Rigidbody2D Rigidbody2D => mRigidbody2D;
     private bool mIsMove;
     private float mDirection;
+    private bool mIsFalling;
     public float GetDirection() { return mDirection; }
     public bool IsMove() { return  mIsMove; }
     private bool mIsJumping;
     public bool IsJumping() { return mIsJumping; }
+
+    public bool IsFalling() { return mIsFalling; }
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +29,7 @@ public class PlayerMover : MonoBehaviour
         mController.Player.Jump.performed += Jump;
         mController.Enable();
         mDirection = 1f;
-        
+        mIsFalling = mRigidbody2D.velocity.y < 0f;
     }
 
     // Update is called once per frame
@@ -52,5 +56,7 @@ public class PlayerMover : MonoBehaviour
         mRigidbody2D.AddForce(10 * Vector2.up, ForceMode2D.Impulse);
         mIsJumping = true;
     }
+
+
 
 }
