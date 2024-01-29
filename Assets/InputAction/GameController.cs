@@ -734,6 +734,214 @@ public partial class @GameController: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""AnimationPreview"",
+            ""id"": ""cede97d9-2994-42d8-80e4-ab1155d74535"",
+            ""actions"": [
+                {
+                    ""name"": ""Animation1"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8fedfd9-60af-4a47-a28a-b615e4c8dcaa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Animation2"",
+                    ""type"": ""Button"",
+                    ""id"": ""a6ef80b8-7569-49f7-a8ca-63006a36ab5a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Animation3"",
+                    ""type"": ""Button"",
+                    ""id"": ""f17fd989-896b-4ec5-a9a0-74cd1ab157b6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Animation4"",
+                    ""type"": ""Button"",
+                    ""id"": ""a8f84aa1-16f1-4646-88e3-db0cdbc2d84e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Animation5"",
+                    ""type"": ""Button"",
+                    ""id"": ""7bd3106a-5f98-4fc4-b6d1-26ebdbfcfaa1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Animation6"",
+                    ""type"": ""Button"",
+                    ""id"": ""b3f8064d-6bc2-4535-a954-2622daa45e92"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Animation7"",
+                    ""type"": ""Button"",
+                    ""id"": ""1a04481b-0285-43c9-9693-434dc1e4456d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Animation8"",
+                    ""type"": ""Button"",
+                    ""id"": ""beea575a-7022-4672-bd38-8808b7c48148"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Animation9"",
+                    ""type"": ""Button"",
+                    ""id"": ""a5b24677-3ea4-495f-98d9-c23eed368451"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Animation10"",
+                    ""type"": ""Button"",
+                    ""id"": ""05b480ac-f59c-472b-b11d-1aee6cbaabf1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""78bb706e-3a94-4688-a3ee-60ab5ca4aeff"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Animation1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""de944cc1-6741-4a2f-b2c0-4a0c6120f40c"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Animation2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""afef3960-6d2f-4240-aa3d-ae5875635c64"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Animation3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""235a9cdd-2331-4454-aa78-fcb29dd1088a"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Animation4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""82a877ec-f8f2-46d0-823d-776466d3d71c"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Animation5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""37d4af03-8c02-4583-bba7-54678ffaa25b"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Animation6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""342faecf-8abe-4797-b748-447534ba4b52"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Animation7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d200100-c735-470c-a61d-fbb854f4d8e0"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Animation8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d097e0b0-de71-40e8-95cf-8c256d9acf49"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Animation9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f538792-c19a-4aa0-9fa7-ac1c254f6391"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Animation10"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -818,6 +1026,18 @@ public partial class @GameController: IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // AnimationPreview
+        m_AnimationPreview = asset.FindActionMap("AnimationPreview", throwIfNotFound: true);
+        m_AnimationPreview_Animation1 = m_AnimationPreview.FindAction("Animation1", throwIfNotFound: true);
+        m_AnimationPreview_Animation2 = m_AnimationPreview.FindAction("Animation2", throwIfNotFound: true);
+        m_AnimationPreview_Animation3 = m_AnimationPreview.FindAction("Animation3", throwIfNotFound: true);
+        m_AnimationPreview_Animation4 = m_AnimationPreview.FindAction("Animation4", throwIfNotFound: true);
+        m_AnimationPreview_Animation5 = m_AnimationPreview.FindAction("Animation5", throwIfNotFound: true);
+        m_AnimationPreview_Animation6 = m_AnimationPreview.FindAction("Animation6", throwIfNotFound: true);
+        m_AnimationPreview_Animation7 = m_AnimationPreview.FindAction("Animation7", throwIfNotFound: true);
+        m_AnimationPreview_Animation8 = m_AnimationPreview.FindAction("Animation8", throwIfNotFound: true);
+        m_AnimationPreview_Animation9 = m_AnimationPreview.FindAction("Animation9", throwIfNotFound: true);
+        m_AnimationPreview_Animation10 = m_AnimationPreview.FindAction("Animation10", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1071,6 +1291,124 @@ public partial class @GameController: IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // AnimationPreview
+    private readonly InputActionMap m_AnimationPreview;
+    private List<IAnimationPreviewActions> m_AnimationPreviewActionsCallbackInterfaces = new List<IAnimationPreviewActions>();
+    private readonly InputAction m_AnimationPreview_Animation1;
+    private readonly InputAction m_AnimationPreview_Animation2;
+    private readonly InputAction m_AnimationPreview_Animation3;
+    private readonly InputAction m_AnimationPreview_Animation4;
+    private readonly InputAction m_AnimationPreview_Animation5;
+    private readonly InputAction m_AnimationPreview_Animation6;
+    private readonly InputAction m_AnimationPreview_Animation7;
+    private readonly InputAction m_AnimationPreview_Animation8;
+    private readonly InputAction m_AnimationPreview_Animation9;
+    private readonly InputAction m_AnimationPreview_Animation10;
+    public struct AnimationPreviewActions
+    {
+        private @GameController m_Wrapper;
+        public AnimationPreviewActions(@GameController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Animation1 => m_Wrapper.m_AnimationPreview_Animation1;
+        public InputAction @Animation2 => m_Wrapper.m_AnimationPreview_Animation2;
+        public InputAction @Animation3 => m_Wrapper.m_AnimationPreview_Animation3;
+        public InputAction @Animation4 => m_Wrapper.m_AnimationPreview_Animation4;
+        public InputAction @Animation5 => m_Wrapper.m_AnimationPreview_Animation5;
+        public InputAction @Animation6 => m_Wrapper.m_AnimationPreview_Animation6;
+        public InputAction @Animation7 => m_Wrapper.m_AnimationPreview_Animation7;
+        public InputAction @Animation8 => m_Wrapper.m_AnimationPreview_Animation8;
+        public InputAction @Animation9 => m_Wrapper.m_AnimationPreview_Animation9;
+        public InputAction @Animation10 => m_Wrapper.m_AnimationPreview_Animation10;
+        public InputActionMap Get() { return m_Wrapper.m_AnimationPreview; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(AnimationPreviewActions set) { return set.Get(); }
+        public void AddCallbacks(IAnimationPreviewActions instance)
+        {
+            if (instance == null || m_Wrapper.m_AnimationPreviewActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_AnimationPreviewActionsCallbackInterfaces.Add(instance);
+            @Animation1.started += instance.OnAnimation1;
+            @Animation1.performed += instance.OnAnimation1;
+            @Animation1.canceled += instance.OnAnimation1;
+            @Animation2.started += instance.OnAnimation2;
+            @Animation2.performed += instance.OnAnimation2;
+            @Animation2.canceled += instance.OnAnimation2;
+            @Animation3.started += instance.OnAnimation3;
+            @Animation3.performed += instance.OnAnimation3;
+            @Animation3.canceled += instance.OnAnimation3;
+            @Animation4.started += instance.OnAnimation4;
+            @Animation4.performed += instance.OnAnimation4;
+            @Animation4.canceled += instance.OnAnimation4;
+            @Animation5.started += instance.OnAnimation5;
+            @Animation5.performed += instance.OnAnimation5;
+            @Animation5.canceled += instance.OnAnimation5;
+            @Animation6.started += instance.OnAnimation6;
+            @Animation6.performed += instance.OnAnimation6;
+            @Animation6.canceled += instance.OnAnimation6;
+            @Animation7.started += instance.OnAnimation7;
+            @Animation7.performed += instance.OnAnimation7;
+            @Animation7.canceled += instance.OnAnimation7;
+            @Animation8.started += instance.OnAnimation8;
+            @Animation8.performed += instance.OnAnimation8;
+            @Animation8.canceled += instance.OnAnimation8;
+            @Animation9.started += instance.OnAnimation9;
+            @Animation9.performed += instance.OnAnimation9;
+            @Animation9.canceled += instance.OnAnimation9;
+            @Animation10.started += instance.OnAnimation10;
+            @Animation10.performed += instance.OnAnimation10;
+            @Animation10.canceled += instance.OnAnimation10;
+        }
+
+        private void UnregisterCallbacks(IAnimationPreviewActions instance)
+        {
+            @Animation1.started -= instance.OnAnimation1;
+            @Animation1.performed -= instance.OnAnimation1;
+            @Animation1.canceled -= instance.OnAnimation1;
+            @Animation2.started -= instance.OnAnimation2;
+            @Animation2.performed -= instance.OnAnimation2;
+            @Animation2.canceled -= instance.OnAnimation2;
+            @Animation3.started -= instance.OnAnimation3;
+            @Animation3.performed -= instance.OnAnimation3;
+            @Animation3.canceled -= instance.OnAnimation3;
+            @Animation4.started -= instance.OnAnimation4;
+            @Animation4.performed -= instance.OnAnimation4;
+            @Animation4.canceled -= instance.OnAnimation4;
+            @Animation5.started -= instance.OnAnimation5;
+            @Animation5.performed -= instance.OnAnimation5;
+            @Animation5.canceled -= instance.OnAnimation5;
+            @Animation6.started -= instance.OnAnimation6;
+            @Animation6.performed -= instance.OnAnimation6;
+            @Animation6.canceled -= instance.OnAnimation6;
+            @Animation7.started -= instance.OnAnimation7;
+            @Animation7.performed -= instance.OnAnimation7;
+            @Animation7.canceled -= instance.OnAnimation7;
+            @Animation8.started -= instance.OnAnimation8;
+            @Animation8.performed -= instance.OnAnimation8;
+            @Animation8.canceled -= instance.OnAnimation8;
+            @Animation9.started -= instance.OnAnimation9;
+            @Animation9.performed -= instance.OnAnimation9;
+            @Animation9.canceled -= instance.OnAnimation9;
+            @Animation10.started -= instance.OnAnimation10;
+            @Animation10.performed -= instance.OnAnimation10;
+            @Animation10.canceled -= instance.OnAnimation10;
+        }
+
+        public void RemoveCallbacks(IAnimationPreviewActions instance)
+        {
+            if (m_Wrapper.m_AnimationPreviewActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IAnimationPreviewActions instance)
+        {
+            foreach (var item in m_Wrapper.m_AnimationPreviewActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_AnimationPreviewActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public AnimationPreviewActions @AnimationPreview => new AnimationPreviewActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1136,5 +1474,18 @@ public partial class @GameController: IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    public interface IAnimationPreviewActions
+    {
+        void OnAnimation1(InputAction.CallbackContext context);
+        void OnAnimation2(InputAction.CallbackContext context);
+        void OnAnimation3(InputAction.CallbackContext context);
+        void OnAnimation4(InputAction.CallbackContext context);
+        void OnAnimation5(InputAction.CallbackContext context);
+        void OnAnimation6(InputAction.CallbackContext context);
+        void OnAnimation7(InputAction.CallbackContext context);
+        void OnAnimation8(InputAction.CallbackContext context);
+        void OnAnimation9(InputAction.CallbackContext context);
+        void OnAnimation10(InputAction.CallbackContext context);
     }
 }
