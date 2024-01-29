@@ -48,6 +48,16 @@ public class CoreSpeedController : MonoBehaviour
         currentSpeed.Value = ClampSpeed(currentSpeed.Value + value);
     }
 
+    public void DecreaseSpeed(float value)
+    {
+        currentSpeed.Value = ClampSpeed(currentSpeed.Value - value);
+    }
+
+    public void ChangeDirection(Vector2 direction)
+    {
+        rigidBody.velocity = direction.normalized * currentSpeed.Value;
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         IBlockable blockable = null;

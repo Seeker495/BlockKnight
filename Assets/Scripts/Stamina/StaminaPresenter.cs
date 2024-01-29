@@ -11,6 +11,7 @@ public class StaminaPresenter : MonoBehaviour
     public void Initialize(float maxStamina)
     {
         staminaModel = new StaminaModel(maxStamina);
+        staminaView = FindAnyObjectByType<StaminaView>();
         CurrentStamina.Subscribe(value =>
         {
             float currentStaminaRatio = value / MaxStamina.Value;
