@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerJumper : MonoBehaviour
 {
     private GameController gameController;
+    private PlayerAnimationController animationController;
     private Rigidbody2D rigidBody;
     private PlayerInfo playerInfo;
     private bool isJumping;
@@ -14,11 +15,10 @@ public class PlayerJumper : MonoBehaviour
         gameController = player.GameController;
         rigidBody = player.RigidBody;
         playerInfo = player.PlayerInfo;
-
+        animationController = player.AnimationController;
         rigidBody.gravityScale = playerInfo.GravityScale;
-
         gameController.Player.Jump.performed += _ => StartJump();
-        gameController.Player.Jump.canceled += _ => isJumping = false;
+        gameController.Player.Jump.canceled += _ => EndJump();
     }
     void Update()
     {
@@ -31,6 +31,7 @@ public class PlayerJumper : MonoBehaviour
     {
         if (!isGrounded) return;
         isJumping = true;
+        animationController.SetIsJumping(true);
         jumpStartTime = Time.time;
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, CalculateJumpVelocity(playerInfo.MinJumpHeight));
     }
@@ -45,8 +46,14 @@ public class PlayerJumper : MonoBehaviour
         }
         else
         {
-            isJumping = false;
+            EndJump();
         }
+    }
+
+    private void EndJump()
+    {
+        isJumping = false;
+        animationController.SetIsJumping(false);
     }
 
     private float CalculateJumpVelocity(float jumpHeight)
@@ -58,6 +65,12 @@ public class PlayerJumper : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
         isGrounded = hit.collider != null;
+        if (isGrounded)
+        {
+            animationController.SetIsGrounded(true);
+            return;
+        }
+        animationController.SetIsGrounded(false);
     }
 
     private void OnDrawGizmos()
