@@ -37,6 +37,7 @@ public class AttackArea : MonoBehaviour
                 coreSpeedController.GetComponent<CoreSplitter>().Split();
             }
             //ヒットストップ処理
+            HitStopManager.HitStop(hitStopSec);
         }
 
         //ブロック衝突時処理
@@ -45,6 +46,7 @@ public class AttackArea : MonoBehaviour
         {
             damageable.TakeDamage(attackPower);
             //ヒットストップ処理
+            HitStopManager.HitStop(hitStopSec);
         }
     }
 
