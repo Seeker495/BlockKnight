@@ -14,21 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxStamina: 100
   staminaRecoveryIntervalSec: 0.1
-  staminaRecoveryValue: 0.2
+  staminaRecoveryValue: 5
   moveSpeed: 10
-  inertia: 0.5
-  gravityScale: 3
-  maxJumpHeight: 3
+  inertia: 0.1
+  gravityScale: 1
+  maxJumpHeight: 5
   minJumpHeight: 0.5
   timeToJumpApex: 0.2
   attackPower: 1
   chargeAttackPower: 2
-  attackAcceleration: 30
-  chargeAttackAcceleration: 50
-  attackIntervalSec: 1
-  attackStamina: 10
-  chargeAttackStamina: 10
-  chargeSec: 1
-  attackActiveSec: 0.5
-  hitStopSec: 0.1
-  chargeHitStopSec: 0.3
+  attackAcceleration: 8
+  chargeAttackAcceleration: 12
+  attackIntervalSec: 0.5
+  attackStamina: 20
+  chargeAttackStamina: 30
+  chargeSec: 2
+  attackActiveSec: 0.1
+  hitStopSec: 1
+  chargeHitStopSec: 2
