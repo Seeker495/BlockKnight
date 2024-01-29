@@ -23,4 +23,4 @@ MonoBehaviour:
   speedDecreaseInterval: 0.1
   speedDecreaseValue: 0.15
   cloneSpeed: 25
-  cloneLifeTimeSec: 0.3
+  cloneLifeTimeSec: 5
