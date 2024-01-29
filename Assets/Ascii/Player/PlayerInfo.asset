@@ -12,9 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9997a5ff951c214f8861b9276d39933, type: 3}
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
+  maxStamina: 100
+  staminaRecoveryIntervalSec: 0.1
+  staminaRecoveryValue: 0.2
   moveSpeed: 10
   inertia: 0.5
   gravityScale: 3
   maxJumpHeight: 3
   minJumpHeight: 0.5
-  timeToJumpApex: 0.5
+  timeToJumpApex: 0.2
+  attackPower: 1
+  chargeAttackPower: 2
+  attackAcceleration: 30
+  chargeAttackAcceleration: 50
+  attackIntervalSec: 1
+  attackStamina: 10
+  chargeAttackStamina: 10
+  chargeSec: 1
+  attackActiveSec: 0.5
+  hitStopSec: 0.1
+  chargeHitStopSec: 0.3
