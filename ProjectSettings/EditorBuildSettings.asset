@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/AsciiLab.unity
+    path: Assets/Ascii/AsciiLab.unity
     guid: 3fb328deeba3c5a4fa589b378d7be830
   m_configObjects: {}
