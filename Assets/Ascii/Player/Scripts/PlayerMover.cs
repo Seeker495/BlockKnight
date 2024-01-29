@@ -9,12 +9,12 @@ public class PlayerMover : MonoBehaviour
     private Vector2 horizontalDirection = Vector2.zero;
     private Vector2 currentVelocity = Vector2.zero;
 
-    void Start()
+    public void Initialize(Player player)
     {
-        rigidBody = GetComponent<Rigidbody2D>();
-        animationController = GetComponent<PlayerAnimationController>();
-        playerInfo = InfomationProvider.Instance.PlayerInfo;
-        gameController = new GameController();
+        rigidBody = player.RigidBody;
+        animationController = player.AnimationController;
+        playerInfo = player.PlayerInfo;
+        gameController = player.GameController;
         gameController.Player.Move.performed += value => ChangeDirection(value.ReadValue<Vector2>());
         gameController.Player.Move.canceled += _ => ChangeDirection(Vector2.zero);
         gameController.Enable();
