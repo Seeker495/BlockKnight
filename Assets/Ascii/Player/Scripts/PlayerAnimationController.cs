@@ -4,10 +4,12 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     private Animator animator;
+    private Vector2 initialScale;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        initialScale = transform.localScale;
     }
 
     public void SetHorizontalVelocity(Vector2 value)
@@ -34,6 +36,6 @@ public class PlayerAnimationController : MonoBehaviour
     private void CheckAndChangeDirection(Vector2 value)
     {
         if (value.x == 0f) return;
-        transform.localScale = new Vector3(value.x, 1f, 1f);
+        transform.localScale = initialScale * new Vector2(value.x, 1);
     }
 }
