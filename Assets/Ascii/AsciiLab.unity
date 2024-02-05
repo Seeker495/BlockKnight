@@ -1414,6 +1414,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerView: {fileID: 1687068333}
+  playerDeathEvent: {fileID: 0}
+  initialTime: 300
 --- !u!4 &587039557
 Transform:
   m_ObjectHideFlags: 0
@@ -2509,6 +2511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f583a36766ed741972339d64ee07d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDeathEvent: {fileID: 0}
 --- !u!114 &1020254552
 MonoBehaviour:
   m_ObjectHideFlags: 0

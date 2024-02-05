@@ -8,6 +8,8 @@ public class TimerPresenter : MonoBehaviour
     private TimerView timerView;
     [SerializeField]
     private GameEvent playerDeathEvent;
+    [SerializeField]
+    private int initialTime;
     private TimerModel timerModel;
     public ReadOnlyReactiveProperty<float> CurrentTime => timerModel.CurrentTime;
 
@@ -19,7 +21,7 @@ public class TimerPresenter : MonoBehaviour
 
     private void Initialize()
     {
-        timerModel = new TimerModel();
+        timerModel = new TimerModel(initialTime);
         CurrentTime.Subscribe(value => timerView.TimerTextUpdate(value)).AddTo(this);
         timerModel.IsTimerEnd.Where(isEnd => isEnd).Subscribe(_ => playerDeathEvent.Raise()).AddTo(this);
     }
