@@ -1,10 +1,13 @@
 using UniRx;
 using UnityEngine;
+using AsciiUtil;
 
 public class TimerPresenter : MonoBehaviour
 {
     [SerializeField]
     private TimerView timerView;
+    [SerializeField]
+    private GameEvent playerDeathEvent;
     private TimerModel timerModel;
     public ReadOnlyReactiveProperty<float> CurrentTime => timerModel.CurrentTime;
 
@@ -18,6 +21,7 @@ public class TimerPresenter : MonoBehaviour
     {
         timerModel = new TimerModel();
         CurrentTime.Subscribe(value => timerView.TimerTextUpdate(value)).AddTo(this);
+        timerModel.IsTimerEnd.Where(isEnd => isEnd).Subscribe(_ => playerDeathEvent.Raise()).AddTo(this);
     }
 
     public void StartTimer()

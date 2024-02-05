@@ -1,9 +1,12 @@
 using Cysharp.Threading.Tasks;
 using UniRx;
 using UnityEngine;
+using AsciiUtil;
 
 public class CoreSpeedController : MonoBehaviour
 {
+    [SerializeField]
+    private GameEvent playerDeathEvent;
     private FloatReactiveProperty currentSpeed;
     public ReadOnlyReactiveProperty<float> CurrentSpeed => currentSpeed.ToReadOnlyReactiveProperty();
     private CoreInfo coreInfo;
@@ -19,6 +22,11 @@ public class CoreSpeedController : MonoBehaviour
         currentSpeed.Subscribe(speed =>
         {
             rigidBody.velocity = rigidBody.velocity.normalized * speed;
+
+            if (speed <= 0)
+            {
+                playerDeathEvent.Raise();
+            }
         });
 
         // 速度を時間経過で減少させる
@@ -77,5 +85,10 @@ public class CoreSpeedController : MonoBehaviour
     private float ClampSpeed(float speed)
     {
         return Mathf.Clamp(speed, coreInfo.MinSpeed, coreInfo.MaxSpeed);
+    }
+
+    private void OnBecameInvisible()
+    {
+        playerDeathEvent.Raise();
     }
 }
