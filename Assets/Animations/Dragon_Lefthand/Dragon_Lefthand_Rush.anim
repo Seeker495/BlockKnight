@@ -100,15 +100,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.55
         value: {x: 13.46, y: -0.3, z: -0.93047833}
-        inSlope: {x: -0.09600219, y: 0, z: 0}
-        outSlope: {x: -0.09600219, y: 0, z: 0}
+        inSlope: {x: -0.0960022, y: 0, z: 0}
+        outSlope: {x: -0.0960022, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.75
-        value: {x: -1.66, y: -0.3, z: -0.93047833}
+        value: {x: -4.66, y: -0.3, z: -0.93047833}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -118,8 +118,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 1.0833334
         value: {x: 3.0891218, y: -0.3, z: -0.93047833}
-        inSlope: {x: 12.719999, y: 0, z: 0}
-        outSlope: {x: 12.719999, y: 0, z: 0}
+        inSlope: {x: 12.887022, y: 0, z: 0}
+        outSlope: {x: 12.887022, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -365,15 +365,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.55
         value: 13.46
-        inSlope: -0.09600219
-        outSlope: -0.09600219
+        inSlope: -0.0960022
+        outSlope: -0.0960022
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.75
-        value: -1.66
+        value: -4.66
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -383,8 +383,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 1.0833334
         value: 3.0891218
-        inSlope: 12.719999
-        outSlope: 12.719999
+        inSlope: 12.887022
+        outSlope: 12.887022
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -604,4 +604,11 @@ AnimationClip:
     flags: 0
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.35
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
