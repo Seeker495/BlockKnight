@@ -152,7 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d738f9980f92aca4e92b29c42c1463f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seInfo: []
+  seInfo:
+  - name: SE_
+    clip: {fileID: 0}
+    audioSources: []
   bgmInfo: []
   masterVolumeMultiply:
     value: 1
