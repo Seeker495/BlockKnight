@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CoreInfo
   m_EditorClassIdentifier: 
   maxSpeed: 30
-  minSpeed: 2
+  minSpeed: 29.1
   displayMinSpeed: 0
   displayMaxSpeed: 180
   lowSpeedColor: {r: 0.019607844, g: 0.18823531, b: 0.9450981, a: 1}

@@ -7,7 +7,7 @@ using Cinemachine;
 public class LockCameraY : CinemachineExtension
 {
     [Tooltip("ƒJƒƒ‰‚ÌYÀ•W‚ğŒÅ’è‚·‚é’l")]
-    public float m_YPosition = 10;
+    public float m_YPosition =  5;
 
     protected override void PostPipelineStageCallback(
         CinemachineVirtualCameraBase vcam,
