@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
+    [SerializeField]
+    private CoreSpeedController coreSpeedController;
+    [SerializeField]
+    private Canvas canvas;
     [SerializeField]
     private PlayerMover playerMover;
     [SerializeField]
@@ -37,5 +45,20 @@ public class Player : MonoBehaviour
         playerMover.Initialize(this);
         playerJumper.Initialize(this);
         playerAttacker.Initialize(this);
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Blink().Forget();
+            coreSpeedController.DecreaseSpeed(playerInfo.OnHitSpeedDownValue);
+        }
+    }
+    private async UniTaskVoid Blink()
+    {
+        await spriteRenderer.DOFade(0, 0.1f).SetLoops(playerInfo.OnHitBlinkNum, LoopType.Yoyo).AsyncWaitForCompletion();
+        spriteRenderer.DOFade(1, 0);
     }
 }

@@ -73,4 +73,12 @@ public class PlayerInfo : ScriptableObject
     private float chargeHitStopSec = 0.3f;
     public float ChargeHitStopSec => chargeHitStopSec;
 
+
+    [Header("被ダメ関連"), Space(3)]
+    [SerializeField, Header("被ダメ時の減速量")]
+    private float onHitSpeedDownValue = 0.5f;
+    public float OnHitSpeedDownValue => onHitSpeedDownValue;
+    [SerializeField, Header("被ダメ時の点滅回数")]
+    private int onHitBlinkNum = 5;
+    public int OnHitBlinkNum => onHitBlinkNum;
 }
