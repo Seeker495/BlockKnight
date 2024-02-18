@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1f7c79cabd1cf46a95049af7d45fb9, type: 3}
   m_Name: CoreInfo
   m_EditorClassIdentifier: 
-  maxSpeed: 10
+  maxSpeed: 25
   minSpeed: 1
   displayMinSpeed: 0
   displayMaxSpeed: 180
   lowSpeedColor: {r: 0.019607844, g: 0.18823531, b: 0.9450981, a: 1}
   highSpeedColor: {r: 0.9725491, g: 0.121568635, b: 0.121568635, a: 1}
   initialSpeed: 20
-  onHitBlockSpeedUpValue: 0
-  speedDecreaseInterval: 1
+  onHitBlockSpeedUpValue: 0.3
+  speedDecreaseInterval: 0.1
   speedDecreaseValue: 0.2
   cloneSpeed: 15
-  cloneLifeTimeSec: 5
+  cloneLifeTimeSec: 3
   feverNeedTime: 15
-  feverTime: 10
+  feverTime: 5

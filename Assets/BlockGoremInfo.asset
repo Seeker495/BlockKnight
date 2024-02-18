@@ -12,15 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4efb85ade8bc8641bbb3892fa3b95dc, type: 3}
   m_Name: BlockGoremInfo
   m_EditorClassIdentifier: 
-  destroyedBlockRatio: 0.7
+  destroyedBlockRatio: 0.2
   minInterval: 0.5
   maxInterval: 1
-  displayMaxSpeed: 0
-  lowSpeedColor: {r: 0, g: 0, b: 0, a: 0}
-  highSpeedColor: {r: 0, g: 0, b: 0, a: 0}
-  initialSpeed: 0
-  onHitBlockSpeedUpValue: 0
-  speedDecreaseInterval: 0
-  speedDecreaseValue: 0
-  cloneSpeed: 0
-  cloneLifeTimeSec: 0
+  jumpAttackStiffness: 0
+  rushAttackStiffness: 0

@@ -20,7 +20,7 @@ public class Block : MonoBehaviour, IBlockable, IDamageable
 
     public virtual void HitAction(CoreSpeedController coreSpeedController)
     {
-        coreSpeedController.IncreaseSpeed(coreInfo.OnHitBlockSpeedUpValue);
+// coreSpeedController.IncreaseSpeed(coreInfo.OnHitBlockSpeedUpValue);
     }
 
     public virtual void TakeDamage(float damage)
