@@ -32,9 +32,14 @@ public class AttackArea : MonoBehaviour
             coreSpeedController.ChangeDirection(reflectDirection);
             coreSpeedController.IncreaseSpeed(attackAcceleration);
 
+            if(coreSpeedController.IsFever)
+            {
+                coreSpeedController.GetComponent<CoreSplitter>().Split(3);
+            }
+
             if (isCharging)
             {
-                coreSpeedController.GetComponent<CoreSplitter>().Split();
+                coreSpeedController.GetComponent<CoreSplitter>().Split(1);
             }
             //ヒットストップ処理
             HitStopManager.HitStop(hitStopSec);

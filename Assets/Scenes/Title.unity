@@ -177,7 +177,7 @@ MonoBehaviour:
   - name: Player_Attack
     clip: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
     audioSources: []
-  - name: Player_damage
+  - name: Player_Damage
     clip: {fileID: 8300000, guid: caa5e06cfdf57544e9b59f061674f9f4, type: 3}
     audioSources: []
   - name: Blockgolem_Rush

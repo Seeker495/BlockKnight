@@ -49,5 +49,11 @@ public class CoreInfo : ScriptableObject
     [SerializeField, Header("クローンが消えるまでの時間(秒)")]
     private float cloneLifeTimeSec;
     public float ClonellifeTimeSec => cloneLifeTimeSec;
-
+    [Space(10), Header("フィーバー")]
+    [SerializeField, Header("フィーバーになるのに必要なスピード維持時間(秒)")]
+    private float feverNeedTime;
+    public float FeverNeedTime => feverNeedTime;
+    [SerializeField, Header("フィーバーの持続時間(秒)")]
+    private float feverTime;    
+    public float FeverTime => feverTime;
 }

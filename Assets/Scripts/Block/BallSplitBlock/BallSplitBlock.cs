@@ -7,6 +7,6 @@ public class BallSplitBlock : Block
     public override void HitAction(CoreSpeedController coreSpeedController)
     {
         base.HitAction(coreSpeedController);
-        coreSpeedController.GetComponent<CoreSplitter>().Split();
+        coreSpeedController.GetComponent<CoreSplitter>().Split(1);
     }
 }
