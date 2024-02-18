@@ -6,11 +6,16 @@ public class Block : MonoBehaviour, IBlockable, IDamageable
     private float hp;
     [SerializeField, Header("破壊不可能なブロックかどうか")]
     private bool isIndestructible;
+    private SpriteRenderer crackSpriteRenderer;
+    [SerializeField]
+    private Sprite[] crackSprites;
     private CoreInfo coreInfo;
 
     private void Start()
     {
         coreInfo = InfomationProvider.Instance.CoreInfo;
+        if (isIndestructible) return;
+        crackSpriteRenderer = transform.Find("Crack").GetComponent<SpriteRenderer>();
     }
 
     public virtual void HitAction(CoreSpeedController coreSpeedController)
@@ -22,7 +27,19 @@ public class Block : MonoBehaviour, IBlockable, IDamageable
     {
         if (isIndestructible) return;
         hp -= damage;
-        if (hp <= 0)
+        if (hp >= 3)
+        {
+            crackSpriteRenderer.sprite = crackSprites[0];
+        }
+        else if (hp >= 2)
+        {
+            crackSpriteRenderer.sprite = crackSprites[1];
+        }
+        else if (hp >= 1)
+        {
+            crackSpriteRenderer.sprite = crackSprites[2];
+        }
+        else
         {
             Destroy(gameObject);
         }
