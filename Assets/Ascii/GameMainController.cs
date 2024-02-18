@@ -11,6 +11,10 @@ public class GameMainController : MonoBehaviour
     [SerializeField]
     private string gameBGMKey = "Stage_Blockgolem";
     [SerializeField]
+    private AsciiButton tweetButton;
+    [SerializeField]
+    private TweetInfo tweetInfo;
+    [SerializeField]
     private CoreSpeedController core;
     [SerializeField]
     private GameEvent gameClearEvent;
@@ -69,6 +73,12 @@ public class GameMainController : MonoBehaviour
         {
             SoundManager.Instance.PlaySE("Click_Button");
             SceneManager.LoadScene("LoadScene");
+        };
+
+        tweetButton.ButtonActions.OnButtonClick += () =>
+        {
+            SoundManager.Instance.PlaySE("Click_Button");
+            naichilab.UnityRoomTweet.Tweet(tweetInfo.GameId, $"{tweetInfo.TweetContent}\n{tweetInfo.HashTag}");
         };
     }
 
