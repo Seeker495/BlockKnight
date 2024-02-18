@@ -10,6 +10,8 @@ public class CoreSpeedController : MonoBehaviour
     private GameEvent playerDeathEvent;
     [SerializeField]
     private CoreSplitter coreSplitter;
+    [SerializeField]
+    private SpriteRendererAnimationPlayer spriteRendererAnimationPlayer;
     private FloatReactiveProperty currentSpeed;
     public ReadOnlyReactiveProperty<float> CurrentSpeed => currentSpeed.ToReadOnlyReactiveProperty();
     private CoreInfo coreInfo;
@@ -98,6 +100,24 @@ public class CoreSpeedController : MonoBehaviour
         if (isFever)
         {
             coreSplitter.Split(2);
+        }
+        if (blockable is OutOfScreenBlock)
+        {
+            var contactPoint = other.contacts[0].point;
+            var animationDirection = contactPoint - (Vector2)transform.position;
+            var animation = Instantiate(spriteRendererAnimationPlayer, transform.position, Quaternion.identity);
+            if (animationDirection.y > 0.3)
+            {
+            }
+            else if (animationDirection.x < 0)
+            {
+                animation.transform.Rotate(0, 0, 90);
+            }
+            else if (animationDirection.x > 0)
+            {
+                animation.transform.Rotate(0, 0, -90);
+            }
+            animation.Play();
         }
         blockable.HitAction(this);
     }
