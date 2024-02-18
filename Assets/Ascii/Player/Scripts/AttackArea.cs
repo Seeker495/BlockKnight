@@ -49,7 +49,6 @@ public class AttackArea : MonoBehaviour
             }
             else
             {
-                Debug.Log(hitEffect);
                 hitEffect.transform.position = other.transform.position;
                 hitEffect.Play();
             }
@@ -62,8 +61,6 @@ public class AttackArea : MonoBehaviour
         if (other.TryGetComponent(out damageable))
         {
             damageable.TakeDamage(attackPower);
-            //ヒットストップ処理
-            HitStopManager.HitStop(hitStopSec);
         }
     }
 
