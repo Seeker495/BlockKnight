@@ -25,10 +25,12 @@ MonoBehaviour:
   chargeAttackPower: 2
   attackAcceleration: 8
   chargeAttackAcceleration: 12
-  attackIntervalSec: 0.3
+  attackIntervalSec: 1
   attackStamina: 20
   chargeAttackStamina: 30
   chargeSec: 2
   attackActiveSec: 0.05
   hitStopSec: 1
   chargeHitStopSec: 2
+  onHitSpeedDownValue: 0.5
+  onHitBlinkNum: 5
