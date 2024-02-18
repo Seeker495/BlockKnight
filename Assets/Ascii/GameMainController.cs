@@ -55,16 +55,19 @@ public class GameMainController : MonoBehaviour
 
         clearHomeButton.ButtonActions.OnButtonClick += () =>
         {
+            SoundManager.Instance.PlaySE("Click_Button");
             SceneManager.LoadScene("Title");
         };
 
         gameOverHomeButton.ButtonActions.OnButtonClick += () =>
         {
+            SoundManager.Instance.PlaySE("Click_Button");
             SceneManager.LoadScene("Title");
         };
 
         retryButton.ButtonActions.OnButtonClick += () =>
         {
+            SoundManager.Instance.PlaySE("Click_Button");
             SceneManager.LoadScene("Tutorial");
         };
     }

@@ -29,7 +29,7 @@ public class CoreSplitter : MonoBehaviour
 
     private void SplitCore()
     {
-        var cloneCore = objectPoolingSystem.Rent(cloneCorePrefab);
+        var cloneCore = Instantiate(cloneCorePrefab);//objectPoolingSystem.Rent(cloneCorePrefab);
         cloneCore.transform.position = transform.position;
         cloneCore.GetComponent<CoreClone>().Initialize().Forget();
     }
