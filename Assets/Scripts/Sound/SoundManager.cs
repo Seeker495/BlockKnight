@@ -171,7 +171,8 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             previousPlayBGMSource = currentPlayBGMSource;
             return;
         }
-
+        if (currentPlayBGMSource == null) return;
+        if (!currentPlayBGMSource.isPlaying) return;
         //フェードアウトが無効ならそのまま終了
         currentPlayBGMSource.Stop();
     }

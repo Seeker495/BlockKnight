@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AsciiUtil.UI;
+using UnityEngine.SceneManagement;
 
 public class TitleButtonSetter : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class TitleButtonSetter : MonoBehaviour
         playButton.ButtonActions.OnButtonClick += () =>
         {
             //シーン読み込み
-            //SceneLoader.Instance.LoadScene(playSceneName);
+            SceneManager.LoadScene(playSceneName);
         };
 
         //操作説明ボタン押下時処理

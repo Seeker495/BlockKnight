@@ -12,9 +12,10 @@ namespace AsciiUtil
 
         public override Tween Play(Transform transform)
         {
-            return transform.DOPunchScale(punchStrength, tweenParameter.Duration, shakeNum)
+            return transform.DOPunchScale(Vector3.one * 0.1f, tweenParameter.Duration, shakeNum)
             .SetEase(tweenParameter.Ease)
-            .SetUpdate(tweenParameter.IsIgnoreTimeScale);
+            .SetUpdate(tweenParameter.IsIgnoreTimeScale)
+            .OnKill(() => transform.localScale = Vector3.one);
         }
     }
 }

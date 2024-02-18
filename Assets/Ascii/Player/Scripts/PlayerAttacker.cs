@@ -21,7 +21,7 @@ public class PlayerAttacker : MonoBehaviour
         staminaPresenter = player.StaminaPresenter;
         animationController = player.AnimationController;
         attackAreaController = player.AttackAreaController;
-        gameController.Player.Attack.performed += _ => StartCharging();
+        gameController.Player.Attack.performed += _ => StartCharging().Forget();
         gameController.Player.Attack.canceled += _ => Attack();
 
         StaminaRecovery();
@@ -36,7 +36,7 @@ public class PlayerAttacker : MonoBehaviour
         }
     }
 
-    private async void StartCharging()
+    private async UniTaskVoid StartCharging()
     {
         if (!isFinishAttackInterval) return;
         chargeCts = new CancellationTokenSource();
