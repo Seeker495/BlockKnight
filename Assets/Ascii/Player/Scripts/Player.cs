@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            SoundManager.Instance.PlaySE("Player_Damage");
             Blink().Forget();
             coreSpeedController.DecreaseSpeed(playerInfo.OnHitSpeedDownValue);
         }
