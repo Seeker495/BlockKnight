@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5664669488737555580}
   - component: {fileID: 8781138144405474956}
   m_Layer: 5
-  m_Name: TweetButton
+  m_Name: RetryButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
     OnButtonExit: {fileID: 0}
     OnButtonDown: {fileID: 0}
     OnButtonUp: {fileID: 0}
-    OnButtonClick: {fileID: 0}
+    OnButtonClick: {fileID: 11400000, guid: 687408e76da574349ac917610834c320, type: 2}
   isInteractable: 1
   isActionAfterAnimation: 0
 --- !u!1 &4386285831249131669
@@ -321,7 +321,7 @@ MonoBehaviour:
     OnButtonExit: {fileID: 0}
     OnButtonDown: {fileID: 0}
     OnButtonUp: {fileID: 0}
-    OnButtonClick: {fileID: 0}
+    OnButtonClick: {fileID: 11400000, guid: 687408e76da574349ac917610834c320, type: 2}
   isInteractable: 1
   isActionAfterAnimation: 0
 --- !u!1 &5580245351099348174
