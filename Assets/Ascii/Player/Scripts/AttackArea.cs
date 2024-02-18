@@ -49,6 +49,7 @@ public class AttackArea : MonoBehaviour
             }
             else
             {
+                Debug.Log(hitEffect);
                 hitEffect.transform.position = other.transform.position;
                 hitEffect.Play();
             }
