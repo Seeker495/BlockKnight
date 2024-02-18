@@ -4,6 +4,10 @@ public class AttackArea : MonoBehaviour
 {
     [SerializeField]
     private Vector2 reflectDirection;
+    [SerializeField]
+    private ParticleSystem hitEffect;
+    [SerializeField]
+    private ParticleSystem chargeHitEffect;
     private PlayerInfo playerInfo;
 
     private float attackPower;
@@ -32,14 +36,21 @@ public class AttackArea : MonoBehaviour
             coreSpeedController.ChangeDirection(reflectDirection);
             coreSpeedController.IncreaseSpeed(attackAcceleration);
 
-            if(coreSpeedController.IsFever)
+            if (coreSpeedController.IsFever)
             {
                 coreSpeedController.GetComponent<CoreSplitter>().Split(3);
             }
 
             if (isCharging)
             {
+                chargeHitEffect.transform.position = other.transform.position;
+                chargeHitEffect.Play();
                 coreSpeedController.GetComponent<CoreSplitter>().Split(1);
+            }
+            else
+            {
+                hitEffect.transform.position = other.transform.position;
+                hitEffect.Play();
             }
             //ヒットストップ処理
             HitStopManager.HitStop(hitStopSec);
