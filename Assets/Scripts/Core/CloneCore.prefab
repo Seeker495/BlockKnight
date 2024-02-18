@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 0ae9965a4178d5442a6e4532422322c8, type: 3}
-  m_Color: {r: 0.93207544, g: 0.41327873, b: 0.41327873, a: 0.69411767}
+  m_Color: {r: 1, g: 0.9864793, b: 0, a: 0.69411767}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloneCorePrefab: {fileID: 4670902813095278868}
+  coreSpeedController: {fileID: 0}
 --- !u!114 &9014787388966957877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,8 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d137e840293be4ab27299edbbb2272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTimeSec: 5
-  coreInfo: {fileID: 11400000, guid: 21f65f1cdb72c4e4f9eda67af5b9d69d, type: 2}
 --- !u!114 &4670902813095278868
 MonoBehaviour:
   m_ObjectHideFlags: 0
