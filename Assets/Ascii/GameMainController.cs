@@ -68,7 +68,7 @@ public class GameMainController : MonoBehaviour
         retryButton.ButtonActions.OnButtonClick += () =>
         {
             SoundManager.Instance.PlaySE("Click_Button");
-            SceneManager.LoadScene("Tutorial");
+            SceneManager.LoadScene("LoadScene");
         };
     }
 
