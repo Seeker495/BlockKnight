@@ -30,6 +30,7 @@ public class PlayerJumper : MonoBehaviour
     private void StartJump()
     {
         if (!isGrounded) return;
+        SoundManager.Instance.PlaySE("Player_Jump");
         isJumping = true;
         animationController.SetIsJumping(true);
         jumpStartTime = Time.time;

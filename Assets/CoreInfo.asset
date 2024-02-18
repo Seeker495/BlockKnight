@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: CoreInfo
   m_EditorClassIdentifier: 
   maxSpeed: 30
-  minSpeed: 29.1
+  minSpeed: 10
   displayMinSpeed: 0
   displayMaxSpeed: 180
   lowSpeedColor: {r: 0.019607844, g: 0.18823531, b: 0.9450981, a: 1}
   highSpeedColor: {r: 0.9725491, g: 0.121568635, b: 0.121568635, a: 1}
-  initialSpeed: 15
-  onHitBlockSpeedUpValue: 0.1
+  initialSpeed: 20
+  onHitBlockSpeedUpValue: 0
   speedDecreaseInterval: 0.1
   speedDecreaseValue: 0.2
   cloneSpeed: 25

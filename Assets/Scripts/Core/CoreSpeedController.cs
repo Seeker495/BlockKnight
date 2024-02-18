@@ -16,14 +16,14 @@ public class CoreSpeedController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         coreInfo = InfomationProvider.Instance.CoreInfo;
-        currentSpeed = new FloatReactiveProperty(0);
+        currentSpeed = new FloatReactiveProperty(coreInfo.InitialSpeed);
 
         // 現在のvelocityを維持したまま、速度を変更する
         currentSpeed.Subscribe(speed =>
         {
             rigidBody.velocity = rigidBody.velocity.normalized * speed;
 
-            if (speed <= 0)
+            if (speed <= coreInfo.MinSpeed)
             {
                 playerDeathEvent.Raise();
             }
@@ -70,6 +70,7 @@ public class CoreSpeedController : MonoBehaviour
     {
         IBlockable blockable = null;
         if (!other.gameObject.TryGetComponent(out blockable)) return;
+        SoundManager.Instance.PlaySE("Core_Reflection");
         blockable.HitAction(this);
     }
 

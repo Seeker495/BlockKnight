@@ -34,32 +34,42 @@ public class TitleButtonSetter : MonoBehaviour
         playButton.ButtonActions.OnButtonClick += () =>
         {
             //シーン読み込み
+            PlayButtonClickSE();
             SceneManager.LoadScene(playSceneName);
         };
 
         //操作説明ボタン押下時処理
         howToPlayButton.ButtonActions.OnButtonClick += () =>
         {
+            PlayButtonClickSE();
             howToPlayPopupWindow.OpenPopupWindow();
         };
 
         //ランキングボタン押下時処理
         rankingButton.ButtonActions.OnButtonClick += () =>
         {
+            PlayButtonClickSE();
             rankingPopupWindow.OpenPopupWindow();
         };
 
         //サウンド調整ボタン押下時処理
         soundVolumeAdjustButton.ButtonActions.OnButtonClick += () =>
         {
+            PlayButtonClickSE();
             soundVolumeAdjustPopupWindow.OpenPopupWindow();
         };
 
         //クレジットボタン押下時処理
         creditButton.ButtonActions.OnButtonClick += () =>
         {
+            PlayButtonClickSE();
             creditPopupWindow.OpenPopupWindow();
         };
+    }
+
+    private void PlayButtonClickSE()
+    {
+        SoundManager.Instance.PlaySE("Click_Button");
     }
 
 }

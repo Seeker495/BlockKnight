@@ -58,6 +58,8 @@ public class PlayerAttacker : MonoBehaviour
             return;
         }
 
+        SoundManager.Instance.PlaySE("Player_Attack");
+
         isFinishAttackInterval = false;
         staminaPresenter.DecreaseStamina(isChargeCompleted ? playerInfo.ChargeAttackStamina : playerInfo.AttackStamina);
         animationController.SetAttacking(true);
