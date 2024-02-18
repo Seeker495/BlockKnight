@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "TweetInfo", menuName = "Ascii/TweetInfo", order = 1)]
 public class TweetInfo : ScriptableObject
 {
     [SerializeField, Header("UnityRoomのゲームID")]
