@@ -3793,7 +3793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 1229672925}
-  playSceneName: LoadScene
+  playSceneName: Tutorial
   howToPlayButton: {fileID: 901855271}
   howToPlayPopupWindow: {fileID: 839814404}
   rankingButton: {fileID: 1632764177}
