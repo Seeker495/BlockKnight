@@ -13,9 +13,9 @@ public class BlockGoremInfo : ScriptableObject
     [SerializeField, Header("最長間隔")]
     private float maxInterval;
     public float MaxInterval => maxInterval;
-    [SerializeField, Header("ジャンプ攻撃後の硬直時間")]
-    private float jumpAttackStiffness;
-    public float JumpAttackStiffness => jumpAttackStiffness;
+    [SerializeField, Header("剣の攻撃後の硬直時間")]
+    private float swordAttackStiffness;
+    public float SwordAttackStiffness => swordAttackStiffness;
 
     [SerializeField, Header("ラッシュ攻撃時の硬直時間")]
     private float rushAttackStiffness;

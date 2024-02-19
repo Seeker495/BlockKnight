@@ -16,6 +16,7 @@ public class BlockGoremController : MonoBehaviour
     private bool isDefeated;
     private FloatReactiveProperty health;
     [SerializeField] private Animator animator;
+    [SerializeField] private Animator swordAnimator;
 
 
     // Start is called before the first frame update
@@ -64,7 +65,8 @@ public class BlockGoremController : MonoBehaviour
             switch (animator.GetInteger("attackPattern"))
             {
                 case 1:
-                    await UniTask.WaitForSeconds(info.JumpAttackStiffness);
+                    swordAnimator.SetInteger("SwordInt", Random.Range(0, 3));
+                    await UniTask.WaitForSeconds(info.SwordAttackStiffness);
                     break;
                 case 2:
                     await UniTask.WaitForSeconds(info.RushAttackStiffness);
@@ -73,6 +75,7 @@ public class BlockGoremController : MonoBehaviour
                     break;
             }
             animator.SetInteger("attackPattern", 0);
+            swordAnimator.SetInteger("SwordInt", 3);
         }
     }
 }
