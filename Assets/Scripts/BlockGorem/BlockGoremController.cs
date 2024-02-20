@@ -43,14 +43,17 @@ public class BlockGoremController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private async UniTaskVoid GetCurrentBlockCount()
     {
         while (isDefeated == false)
         {
-            health.Value = GetComponentsInChildren<Block>().ToList().Count;
+            if (GetComponentsInChildren<Block>().First() == null)
+                continue;
+            var currentHealth = GetComponentsInChildren<Block>().ToList().Count;
+            health.Value = currentHealth;
             await UniTask.WaitForFixedUpdate();
         }
     }
@@ -59,13 +62,13 @@ public class BlockGoremController : MonoBehaviour
     {
         while (true)
         {
-            
+
             await UniTask.WaitForSeconds(Random.Range(info.MinInterval, info.MaxInterval));
             animator.SetInteger("attackPattern", Random.Range(1, 3));
             switch (animator.GetInteger("attackPattern"))
             {
                 case 1:
-                    swordAnimator.SetInteger("SwordInt", Random.Range(0, 3));
+                    swordAnimator.SetInteger("attackPattern", Random.Range(0, 3));
                     await UniTask.WaitForSeconds(info.SwordAttackStiffness);
                     break;
                 case 2:
@@ -75,7 +78,7 @@ public class BlockGoremController : MonoBehaviour
                     break;
             }
             animator.SetInteger("attackPattern", 0);
-            swordAnimator.SetInteger("SwordInt", 3);
+            swordAnimator.SetInteger("attackPattern", 3);
         }
     }
 }
