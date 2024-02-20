@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1f7c79cabd1cf46a95049af7d45fb9, type: 3}
   m_Name: CoreInfo
   m_EditorClassIdentifier: 
-  maxSpeed: 25
-  minSpeed: 1
+  maxSpeed: 28
+  minSpeed: 0
   displayMinSpeed: 0
   displayMaxSpeed: 180
   lowSpeedColor: {r: 0.019607844, g: 0.18823531, b: 0.9450981, a: 1}
@@ -24,5 +24,5 @@ MonoBehaviour:
   speedDecreaseValue: 0.2
   cloneSpeed: 15
   cloneLifeTimeSec: 3
-  feverNeedTime: 15
-  feverTime: 5
+  feverNeedTime: 16
+  feverTime: 4
