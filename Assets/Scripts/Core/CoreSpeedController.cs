@@ -35,6 +35,7 @@ public class CoreSpeedController : MonoBehaviour
             {
                 //フィーバー中は最高速度で固定
                 rigidBody.velocity = rigidBody.velocity.normalized * coreInfo.MaxSpeed;
+                currentSpeed.Value = coreInfo.MaxSpeed;
                 return;
             }
             rigidBody.velocity = rigidBody.velocity.normalized * speed;
