@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UniRx;
 using DG.Tweening;
+using Cysharp.Threading.Tasks;
 
 namespace AsciiUtil.UI
 {
@@ -40,10 +41,10 @@ namespace AsciiUtil.UI
         private void OnEnable()
         {
             if (!isOpenOnEnable) return;
-            OpenPopupWindow();
+            OpenPopupWindow().Forget();
         }
 
-        public async void OpenPopupWindow()
+        public async UniTask OpenPopupWindow()
         {
             await openFeedback.CreateSequence(transform).Play().AsyncWaitForCompletion();
             onOpened?.Invoke();

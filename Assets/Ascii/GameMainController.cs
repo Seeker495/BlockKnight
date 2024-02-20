@@ -29,6 +29,9 @@ public class GameMainController : MonoBehaviour
     [SerializeField]
     private AsciiButton retryButton;
 
+    private bool isGameOver = false;
+    private bool isGameClear = false;
+
     public float heartBeatInterval { get; set; } = 1.0f;
 
     private CancellationTokenSource heartBeatCTS = new CancellationTokenSource();
@@ -37,54 +40,65 @@ public class GameMainController : MonoBehaviour
         SoundManager.Instance.StopBGM();
         SoundManager.Instance.PlayBGM(gameBGMKey);
 
+        gameOverHomeButton.IsInteractable = false;
+        retryButton.IsInteractable = false;
+
         gameOverEvent.EventSubject.Subscribe(async _ =>
         {
+            if (isGameOver) return;
+            isGameOver = true;
             SoundManager.Instance.StopBGM();
             SoundManager.Instance.PlaySE("Gameover");
-            gameOverPopupWindow.OpenPopupWindow();
+            await gameOverPopupWindow.OpenPopupWindow();
             Destroy(core);
             heartBeatCTS?.Cancel();
-            await UniTask.WaitForSeconds(1f);
+            gameOverHomeButton.IsInteractable = true;
+            retryButton.IsInteractable = true;
             UnityEngine.Time.timeScale = 0;
         });
 
         gameClearEvent.EventSubject.Subscribe(async _ =>
         {
+            if (isGameClear) return;
+            isGameClear = true;
             SoundManager.Instance.StopBGM();
             SoundManager.Instance.PlaySE("Gameclear");
-            gameClearPopupWindow.OpenPopupWindow();
+            await gameClearPopupWindow.OpenPopupWindow();
             Destroy(core);
             heartBeatCTS?.Cancel();
-            await UniTask.WaitForSeconds(1f);
+            clearHomeButton.IsInteractable = true;
+            tweetButton.IsInteractable = true;
             UnityEngine.Time.timeScale = 0;
         });
 
         PlayHeartBeatSound().Forget();
 
-        clearHomeButton.ButtonActions.OnButtonClick += () =>
+        clearHomeButton.ButtonActions.OnButtonClick += async () =>
         {
-            UnityEngine.Time.timeScale = 1;
             SoundManager.Instance.PlaySE("Click_Button");
             SceneManager.LoadScene("Title");
+            await UniTask.WaitForSeconds(0.3f, ignoreTimeScale: true);
+            UnityEngine.Time.timeScale = 1;
         };
 
-        gameOverHomeButton.ButtonActions.OnButtonClick += () =>
+        gameOverHomeButton.ButtonActions.OnButtonClick += async () =>
         {
-            UnityEngine.Time.timeScale = 1;
             SoundManager.Instance.PlaySE("Click_Button");
             SceneManager.LoadScene("Title");
+            await UniTask.WaitForSeconds(0.3f, ignoreTimeScale: true);
+            UnityEngine.Time.timeScale = 1;
         };
 
-        retryButton.ButtonActions.OnButtonClick += () =>
+        retryButton.ButtonActions.OnButtonClick += async () =>
         {
-            UnityEngine.Time.timeScale = 1;
             SoundManager.Instance.PlaySE("Click_Button");
             SceneManager.LoadScene("LoadScene");
+            await UniTask.WaitForSeconds(0.3f, ignoreTimeScale: true);
+            UnityEngine.Time.timeScale = 1;
         };
 
         tweetButton.ButtonActions.OnButtonClick += () =>
         {
-            UnityEngine.Time.timeScale = 1;
             SoundManager.Instance.PlaySE("Click_Button");
             naichilab.UnityRoomTweet.Tweet(tweetInfo.GameId, $"{tweetInfo.TweetContent}\n{tweetInfo.HashTag}");
         };

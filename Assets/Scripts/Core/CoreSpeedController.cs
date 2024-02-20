@@ -46,7 +46,6 @@ public class CoreSpeedController : MonoBehaviour
             }
             else
             {
-                Debug.Log("CancelFeverTimer");
                 feverCTS?.Cancel();
                 feverCTS = null;
             }
