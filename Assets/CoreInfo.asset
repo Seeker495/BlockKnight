@@ -24,5 +24,5 @@ MonoBehaviour:
   speedDecreaseValue: 0.2
   cloneSpeed: 12
   cloneLifeTimeSec: 2
-  feverNeedTime: 15
-  feverTime: 2
+  feverNeedTime: 5
+  feverTime: 4
