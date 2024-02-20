@@ -15,5 +15,5 @@ MonoBehaviour:
   destroyedBlockRatio: 0.7
   minInterval: 1
   maxInterval: 4
-  swordAttackStiffness: 0
-  rushAttackStiffness: 2
+  swordAttackStiffness: 2
+  rushAttackStiffness: 3
