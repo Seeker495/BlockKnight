@@ -37,46 +37,54 @@ public class GameMainController : MonoBehaviour
         SoundManager.Instance.StopBGM();
         SoundManager.Instance.PlayBGM(gameBGMKey);
 
-        gameOverEvent.EventSubject.Subscribe(_ =>
+        gameOverEvent.EventSubject.Subscribe(async _ =>
         {
             SoundManager.Instance.StopBGM();
             SoundManager.Instance.PlaySE("Gameover");
             gameOverPopupWindow.OpenPopupWindow();
             Destroy(core);
             heartBeatCTS?.Cancel();
+            await UniTask.WaitForSeconds(1f);
+            UnityEngine.Time.timeScale = 0;
         });
 
-        gameClearEvent.EventSubject.Subscribe(_ =>
+        gameClearEvent.EventSubject.Subscribe(async _ =>
         {
             SoundManager.Instance.StopBGM();
             SoundManager.Instance.PlaySE("Gameclear");
             gameClearPopupWindow.OpenPopupWindow();
             Destroy(core);
             heartBeatCTS?.Cancel();
+            await UniTask.WaitForSeconds(1f);
+            UnityEngine.Time.timeScale = 0;
         });
 
         PlayHeartBeatSound().Forget();
 
         clearHomeButton.ButtonActions.OnButtonClick += () =>
         {
+            UnityEngine.Time.timeScale = 1;
             SoundManager.Instance.PlaySE("Click_Button");
             SceneManager.LoadScene("Title");
         };
 
         gameOverHomeButton.ButtonActions.OnButtonClick += () =>
         {
+            UnityEngine.Time.timeScale = 1;
             SoundManager.Instance.PlaySE("Click_Button");
             SceneManager.LoadScene("Title");
         };
 
         retryButton.ButtonActions.OnButtonClick += () =>
         {
+            UnityEngine.Time.timeScale = 1;
             SoundManager.Instance.PlaySE("Click_Button");
             SceneManager.LoadScene("LoadScene");
         };
 
         tweetButton.ButtonActions.OnButtonClick += () =>
         {
+            UnityEngine.Time.timeScale = 1;
             SoundManager.Instance.PlaySE("Click_Button");
             naichilab.UnityRoomTweet.Tweet(tweetInfo.GameId, $"{tweetInfo.TweetContent}\n{tweetInfo.HashTag}");
         };
