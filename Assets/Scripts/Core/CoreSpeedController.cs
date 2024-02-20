@@ -19,7 +19,7 @@ public class CoreSpeedController : MonoBehaviour
     private bool isFever = false;
     public bool IsFever => isFever;
     private float maxSpeedEightyPercent;
-    private CancellationTokenSource feverCTS = new CancellationTokenSource();
+    private CancellationTokenSource feverCTS;
 
     private void Start()
     {
@@ -42,12 +42,13 @@ public class CoreSpeedController : MonoBehaviour
 
             if (speed >= maxSpeedEightyPercent)
             {
-                feverCTS = new CancellationTokenSource();
                 StartFeverTimer().Forget();
             }
             else
             {
+                Debug.Log("CancelFeverTimer");
                 feverCTS?.Cancel();
+                feverCTS = null;
             }
 
             if (speed <= coreInfo.MinSpeed)
@@ -134,6 +135,8 @@ public class CoreSpeedController : MonoBehaviour
 
     private async UniTaskVoid StartFeverTimer()
     {
+        if (feverCTS != null) return;
+        feverCTS = new CancellationTokenSource();
         await UniTask.WaitForSeconds(coreInfo.FeverNeedTime, cancellationToken: feverCTS.Token);
         isFever = true;
         StartFever().Forget();
