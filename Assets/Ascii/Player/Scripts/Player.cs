@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using AsciiUtil;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField]
     private CoreSpeedController coreSpeedController;
+    [SerializeField]
+    private GameEvent gameOverEvent;
     [SerializeField]
     private Canvas canvas;
     [SerializeField]
@@ -54,6 +57,11 @@ public class Player : MonoBehaviour
         {
             Damage();
         }
+    }
+
+    private void OnBecameInvisible()
+    {
+        gameOverEvent.Raise();
     }
 
     public void Damage()
