@@ -46,6 +46,7 @@ public class GameMainController : MonoBehaviour
         gameOverEvent.EventSubject.Subscribe(async _ =>
         {
             if (isGameOver) return;
+            if (isGameClear) return;
             isGameOver = true;
             SoundManager.Instance.StopBGM();
             SoundManager.Instance.PlaySE("Gameover");
@@ -59,6 +60,7 @@ public class GameMainController : MonoBehaviour
 
         gameClearEvent.EventSubject.Subscribe(async _ =>
         {
+            if (isGameOver) return;
             if (isGameClear) return;
             isGameClear = true;
             SoundManager.Instance.StopBGM();

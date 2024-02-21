@@ -29,6 +29,7 @@ public class PlayerJumper : MonoBehaviour
 
     private void StartJump()
     {
+        if (isJumping) return;
         if (!isGrounded) return;
         SoundManager.Instance.PlaySE("Player_Jump");
         isJumping = true;
