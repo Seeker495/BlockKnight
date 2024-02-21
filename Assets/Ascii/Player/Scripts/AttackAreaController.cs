@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class AttackAreaController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class AttackAreaController : MonoBehaviour
     {
         foreach (var attackArea in attackAreas)
         {
+            if (attackArea == null) break;
             attackArea.gameObject.SetActive(true);
             attackArea.SetParameter(isCharging);
         }
@@ -26,8 +28,10 @@ public class AttackAreaController : MonoBehaviour
 
     public void Disable()
     {
+        
         foreach (var attackArea in attackAreas)
         {
+            if (attackArea == null) break;
             attackArea.gameObject.SetActive(false);
         }
     }

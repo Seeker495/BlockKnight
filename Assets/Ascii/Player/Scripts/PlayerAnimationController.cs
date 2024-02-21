@@ -14,22 +14,26 @@ public class PlayerAnimationController : MonoBehaviour
 
     public void SetHorizontalVelocity(Vector2 value)
     {
+        if (animator == null) return;
         animator.SetFloat("HorizontalVelocity", Mathf.Abs(value.x));
         CheckAndChangeDirection(value.normalized);
     }
 
     public void SetAttacking(bool value)
     {
+        if (animator == null) return;
         animator.SetBool("IsAttacking", value);
     }
 
     public void SetIsJumping(bool value)
     {
+        if (animator == null) return;
         animator.SetBool("IsJumping", value);
     }
 
     public void SetIsGrounded(bool value)
     {
+        if (animator == null) return;
         animator.SetBool("IsGrounded", value);
     }
 

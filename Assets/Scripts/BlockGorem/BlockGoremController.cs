@@ -3,10 +3,12 @@ using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using TMPro;
 using UniRx;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class BlockGoremController : MonoBehaviour
 {
@@ -14,30 +16,46 @@ public class BlockGoremController : MonoBehaviour
     [SerializeField] private BlockGoremInfo info;
     private int maxHealth;
     private bool isDefeated;
-    private FloatReactiveProperty health;
+    private FloatReactiveProperty health;  
     [SerializeField] private Animator animator;
     [SerializeField] private Animator swordAnimator;
+    private CancellationTokenSource cts;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        cts = new CancellationTokenSource();
         TryGetComponent(out animator);
+        swordAnimator = GameObject.FindWithTag("Sword").GetComponent<Animator>();
         isDefeated = false;
         maxHealth = GetComponentsInChildren<Block>().ToList().Count;
         health = new FloatReactiveProperty(maxHealth);
         Debug.Log(maxHealth);
         health.Subscribe(h =>
         {
+
             if (maxHealth * (1 - info.DestroyedBlockRatio) >= h)
             {
                 deathEvent.Raise();
                 isDefeated = true;
             }
-        }).AddTo(this);
 
-        GetCurrentBlockCount().Forget();
-        Attack().Forget();
+            if (!isDefeated)
+            {
+                GetCurrentBlockCount(cts.Token).Forget();
+                Attack(cts.Token).Forget();
+            }
+
+        }).AddTo(gameObject);
+
+    }
+
+    private void OnDestroy()
+    {
+        animator = null;
+        swordAnimator = null;
     }
 
     // Update is called once per frame
@@ -46,39 +64,48 @@ public class BlockGoremController : MonoBehaviour
 
     }
 
-    private async UniTaskVoid GetCurrentBlockCount()
+    private async UniTaskVoid GetCurrentBlockCount(CancellationToken token)
     {
-        while (isDefeated == false)
+
+        while (!token.IsCancellationRequested && !destroyCancellationToken.IsCancellationRequested)
         {
-            if (GetComponentsInChildren<Block>().First() == null)
+            if (GetComponentsInChildren<Block>().Length == 0)
+            {
                 continue;
+            }
             var currentHealth = GetComponentsInChildren<Block>().ToList().Count;
             health.Value = currentHealth;
-            await UniTask.WaitForFixedUpdate();
+            await UniTask.WaitForFixedUpdate(token);
         }
     }
 
-    private async UniTaskVoid Attack()
+    private async UniTaskVoid Attack(CancellationToken token)
     {
-        while (true)
-        {
 
-            await UniTask.WaitForSeconds(Random.Range(info.MinInterval, info.MaxInterval));
-            animator.SetInteger("attackPattern", Random.Range(1, 3));
-            switch (animator.GetInteger("attackPattern"))
+
+        while (!destroyCancellationToken.IsCancellationRequested)
+        {
+            await UniTask.WaitForSeconds(Random.Range(info.MinInterval, info.MaxInterval), false, PlayerLoopTiming.Update, token);
+            if (animator != null)
             {
-                case 1:
-                    swordAnimator.SetInteger("attackPattern", Random.Range(0, 3));
-                    await UniTask.WaitForSeconds(info.SwordAttackStiffness);
-                    break;
-                case 2:
-                    await UniTask.WaitForSeconds(info.RushAttackStiffness);
-                    break;
-                default:
-                    break;
+                animator?.SetInteger("attackPattern", Random.Range(1, 3));
+                switch (animator?.GetInteger("attackPattern"))
+                {
+                    case 1:
+                        swordAnimator?.SetInteger("attackPattern", Random.Range(0, 3));
+                        await UniTask.WaitForSeconds(info.SwordAttackStiffness, false, PlayerLoopTiming.Update, token);
+                        break;
+                    case 2:
+                        await UniTask.WaitForSeconds(info.RushAttackStiffness, false, PlayerLoopTiming.Update, token);
+                        break;
+                    default:
+                        break;
+                }
+                animator?.SetInteger("attackPattern", 0);
+                swordAnimator?.SetInteger("attackPattern", 3);
             }
-            animator.SetInteger("attackPattern", 0);
-            swordAnimator.SetInteger("attackPattern", 3);
         }
+
+        await destroyCancellationToken.WaitUntilCanceled();
     }
 }
