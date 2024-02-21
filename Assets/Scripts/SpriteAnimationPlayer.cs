@@ -64,7 +64,7 @@ public class SpriteAnimationPlayer : MonoBehaviour
 
     private async void AnimationUpdate(CancellationToken token)
     {
-        while (token.IsCancellationRequested == false)
+        while (destroyCancellationToken.IsCancellationRequested == false)
         {
             // 画像を切り替える
             image.sprite = sprites[currentSpriteIndex];
