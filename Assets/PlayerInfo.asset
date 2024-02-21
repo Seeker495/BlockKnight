@@ -30,7 +30,7 @@ MonoBehaviour:
   chargeAttackStamina: 50
   chargeSec: 1.3
   attackActiveSec: 0.2
-  hitStopSec: 0.3
+  hitStopSec: 0.4
   chargeHitStopSec: 0.5
-  onHitSpeedDownValue: 3
+  onHitSpeedDownValue: 2
   onHitBlinkNum: 3

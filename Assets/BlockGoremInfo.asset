@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BlockGoremInfo
   m_EditorClassIdentifier: 
   destroyedBlockRatio: 0.7
-  minInterval: 1
-  maxInterval: 4
+  minInterval: 3
+  maxInterval: 5
   swordAttackStiffness: 2
   rushAttackStiffness: 3
