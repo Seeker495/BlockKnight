@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D))]
 public class Block : MonoBehaviour, IBlockable, IDamageable
 {
@@ -10,6 +11,7 @@ public class Block : MonoBehaviour, IBlockable, IDamageable
     [SerializeField]
     private Sprite[] crackSprites;
     private CoreInfo coreInfo;
+    private UnityAction onDeath;
 
     private void Start()
     {
@@ -18,9 +20,14 @@ public class Block : MonoBehaviour, IBlockable, IDamageable
         crackSpriteRenderer = transform.Find("Crack").GetComponent<SpriteRenderer>();
     }
 
+    public void Initialize(UnityAction onDeath)
+    {
+        this.onDeath = onDeath;
+    }
+
     public virtual void HitAction(CoreSpeedController coreSpeedController)
     {
-// coreSpeedController.IncreaseSpeed(coreInfo.OnHitBlockSpeedUpValue);
+        // coreSpeedController.IncreaseSpeed(coreInfo.OnHitBlockSpeedUpValue);
     }
 
     public virtual void TakeDamage(float damage)
@@ -41,6 +48,7 @@ public class Block : MonoBehaviour, IBlockable, IDamageable
         }
         else
         {
+            onDeath?.Invoke();
             Destroy(gameObject);
         }
     }
