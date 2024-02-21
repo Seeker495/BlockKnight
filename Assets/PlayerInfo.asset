@@ -18,7 +18,7 @@ MonoBehaviour:
   moveSpeed: 10
   inertia: 0.1
   gravityScale: 2.4
-  maxJumpHeight: 4.6
+  maxJumpHeight: 4.8
   minJumpHeight: 0.3
   timeToJumpApex: 0.6
   attackPower: 2
@@ -32,5 +32,5 @@ MonoBehaviour:
   attackActiveSec: 0.2
   hitStopSec: 0.4
   chargeHitStopSec: 0.5
-  onHitSpeedDownValue: 3
+  onHitSpeedDownValue: 3.2
   onHitBlinkNum: 3
