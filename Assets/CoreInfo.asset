@@ -19,10 +19,10 @@ MonoBehaviour:
   lowSpeedColor: {r: 0.019607844, g: 0.18823531, b: 0.9450981, a: 1}
   highSpeedColor: {r: 0.9725491, g: 0.121568635, b: 0.121568635, a: 1}
   initialSpeed: 18
-  onHitBlockSpeedUpValue: 0.7
+  onHitBlockSpeedUpValue: 0.8
   speedDecreaseInterval: 0.1
   speedDecreaseValue: 0.2
   cloneSpeed: 18
-  cloneLifeTimeSec: 2
-  feverNeedTime: 100
-  feverTime: 3
+  cloneLifeTimeSec: 3
+  feverNeedTime: 5.6
+  feverTime: 4
