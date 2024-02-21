@@ -16,7 +16,7 @@ public class BlockGoremController : MonoBehaviour
     [SerializeField] private BlockGoremInfo info;
     private int maxHealth;
     private bool isDefeated;
-    private FloatReactiveProperty health;  
+    private FloatReactiveProperty health;
     [SerializeField] private Animator animator;
     [SerializeField] private Animator swordAnimator;
     private CancellationTokenSource cts;
@@ -30,12 +30,19 @@ public class BlockGoremController : MonoBehaviour
         TryGetComponent(out animator);
         swordAnimator = GameObject.FindWithTag("Sword").GetComponent<Animator>();
         isDefeated = false;
-        maxHealth = GetComponentsInChildren<Block>().ToList().Count;
+
+
+        //あすきー追記ここから
+        var blocks = GetComponentsInChildren<Block>().ToList();
+        blocks.ForEach(b => b.Initialize(() => HealthUpdate()));
+        maxHealth = blocks.Count;
+        //あすきー追記ここまで
+
+        //maxHealth = GetComponentsInChildren<Block>().ToList().Count;
         health = new FloatReactiveProperty(maxHealth);
         Debug.Log(maxHealth);
         health.Subscribe(h =>
         {
-
             if (maxHealth * (1 - info.DestroyedBlockRatio) >= h)
             {
                 deathEvent.Raise();
@@ -44,12 +51,18 @@ public class BlockGoremController : MonoBehaviour
 
             if (!isDefeated)
             {
-                GetCurrentBlockCount(cts.Token).Forget();
+                //個数を数える処理をブロックにイベントベースで実装したためコメントアウト
+                //GetCurrentBlockCount(cts.Token).Forget();
                 Attack(cts.Token).Forget();
             }
 
         }).AddTo(gameObject);
 
+    }
+
+    private void HealthUpdate()
+    {
+        health.Value = GetComponentsInChildren<Block>().Length;
     }
 
     private void OnDestroy()

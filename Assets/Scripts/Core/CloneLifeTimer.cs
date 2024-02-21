@@ -26,6 +26,6 @@ public class CoreClone : MonoBehaviour
         rigidBody.velocity = randomVector * coreInfo.CloneSpeed;
 
         await UniTask.WaitForSeconds(coreInfo.ClonellifeTimeSec);
-        objectPoolingSystem.Release(gameObject.GetComponent<PoolableObject>());
+        Destroy(gameObject);
     }
 }
