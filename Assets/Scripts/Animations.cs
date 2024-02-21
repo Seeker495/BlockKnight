@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+#if UNITY_EDITOR
 using UnityEditor.Animations;
+#endif // UNITY_EDITOR
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 
@@ -10,6 +12,7 @@ using UnityEngine.InputSystem.XR;
  * 
  * 
  */
+#if UNITY_EDITOR
 public class Animations : MonoBehaviour
 {
     [Serializable]
@@ -50,3 +53,4 @@ public class Animations : MonoBehaviour
         
     }
 }
+#endif // UNITY_EDITOR

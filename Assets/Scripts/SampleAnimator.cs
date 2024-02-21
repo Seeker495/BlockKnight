@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor.Animations;
+#endif // UNITY_EDITOR
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +13,7 @@ using UnityEngine.InputSystem;
  * playAnimation‚Éanimations‚ÉŠi”[‚³‚ê‚Ä‚¢‚éClip‚Ì–¼‘O‚ğ“ü‚ê‚é‚ÆÄ¶‚µ‚Ä‚­‚ê‚é
  * 
  */
+#if UNITY_EDITOR
 public class SampleAnimator : MonoBehaviour
 {
     string playAnimation;
@@ -188,4 +191,4 @@ public class SampleAnimator : MonoBehaviour
         }
     }
 }
-
+#endif // UNITY_EDITOR

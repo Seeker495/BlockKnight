@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif // UNITY_EDITOR
 using UnityEngine;
 
+#if UNITY_EDITOR
 public class StateAnimation : MonoBehaviour
 {
     [MenuItem("MyMenu/Create Controller")]
@@ -26,3 +29,4 @@ public class StateAnimation : MonoBehaviour
         var resetTransition = rootStateMachine.AddAnyStateTransition(stateA1);
     }
 }
+#endif // UNITY_EDITOR
