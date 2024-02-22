@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     public PlayerAnimationController AnimationController => animationController;
     private StaminaPresenter staminaPresenter;
     public StaminaPresenter StaminaPresenter => staminaPresenter;
+    private bool canDamage = true;
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -53,7 +54,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") && canDamage)
         {
             Damage();
         }
@@ -69,6 +70,14 @@ public class Player : MonoBehaviour
         SoundManager.Instance.PlaySE("Player_Damage");
         Blink().Forget();
         coreSpeedController.DecreaseSpeed(playerInfo.OnHitSpeedDownValue);
+        canDamage = false;
+        DamageInterval().Forget();
+    }
+
+    private async UniTaskVoid DamageInterval()
+    {
+        await UniTask.WaitForSeconds(playerInfo.OnHitInterval);
+        canDamage = true;
     }
     private async UniTaskVoid Blink()
     {

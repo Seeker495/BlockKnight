@@ -81,4 +81,7 @@ public class PlayerInfo : ScriptableObject
     [SerializeField, Header("被ダメ時の点滅回数")]
     private int onHitBlinkNum = 5;
     public int OnHitBlinkNum => onHitBlinkNum;
+    [SerializeField, Header("被ダメしてから再度被ダメするようになるまでの間隔")]
+    private float onHitInterval = 0.5f;
+    public float OnHitInterval => onHitInterval;
 }
