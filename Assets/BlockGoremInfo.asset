@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4efb85ade8bc8641bbb3892fa3b95dc, type: 3}
   m_Name: BlockGoremInfo
   m_EditorClassIdentifier: 
-  destroyedBlockRatio: 0.8
+  destroyedBlockRatio: 0.85
   minInterval: 3
   maxInterval: 5
   swordAttackStiffness: 2
