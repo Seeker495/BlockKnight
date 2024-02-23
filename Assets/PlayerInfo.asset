@@ -34,4 +34,4 @@ MonoBehaviour:
   chargeHitStopSec: 0.5
   onHitSpeedDownValue: 5
   onHitBlinkNum: 3
-  onHitInterval: 0.5
+  onHitInterval: 0.7
