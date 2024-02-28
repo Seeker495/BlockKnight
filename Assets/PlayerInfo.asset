@@ -32,6 +32,6 @@ MonoBehaviour:
   attackActiveSec: 0.15
   hitStopSec: 0.4
   chargeHitStopSec: 0.5
-  onHitSpeedDownValue: 5
+  onHitSpeedDownValue: 4.5
   onHitBlinkNum: 3
-  onHitInterval: 0.7
+  onHitInterval: 1
